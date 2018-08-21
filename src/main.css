@@ -1,0 +1,27 @@
+
+
+* {
+  margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  vertical-align: baseline;
+  /* border: 1px solid steelblue; */
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  margin: 0px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  background-color: rgb(255, 253, 163);
+}
+
+
+
+

@@ -1,5 +1,5 @@
 <template>
-  
+  <p>I'm the menu</p>
 </template>
 
 <script>
@@ -8,6 +8,6 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 
 </style>
