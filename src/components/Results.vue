@@ -10,26 +10,14 @@
 </template>
 
 <script>
-import pokemon from '../../pokedex.js';
 import Tile from './Tile.vue';
 export default {
   props: {
-  },
-  data(){
-    return {
-      pokemon
-    };
+    pokemon: Array
   },
   components: {
     Tile
   },
-  computed: {
-
-    // type() {
-    //   const typeOne = this.pokemon.map(type =>)
-    //   const typeTwo
-    // }
-  }
 };
 </script>
 
