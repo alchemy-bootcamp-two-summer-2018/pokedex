@@ -1,11 +1,13 @@
 <template>
   <section>
     <p>Results</p>
-    <Tile
-      v-for="pokemon in list"
-      v-bind:key="pokemon.pokemon"
-      v-bind:pokemon="pokemon"
-    />
+    <div id="pokemon-list">
+      <Tile
+        v-for="pokemon in list"
+        v-bind:key="pokemon.pokemon"
+        v-bind:pokemon="pokemon"
+      />
+    </div>
   </section>
 </template>
 
@@ -21,5 +23,13 @@ export default {
 </script>
 
 <style scoped>
+
+div#pokemon-list{
+  margin: 0 3em;
+  display: grid;
+  grid-gap: 2em;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
 
 </style>
