@@ -1,11 +1,6 @@
 Pokedex
 ===
 
-## Code Wars
-
-* Do in class [Kata One](https://www.codewars.com/kata/insert-dashes) and 
-[Kata Two](https://www.codewars.com/kata/simple-validation-of-a-username-with-regex)
-
 ## App
 
 Build a searchable, sortable pokemon viewer. The lab includes the pokemon data you can use!
@@ -67,9 +62,9 @@ Offers controls for filtering:
 Offer sorting based one of:
 
 1. Pokemon name (default)
-1. Type (use `type_1`)
-1. Attack
-1. Defence
+2. Type (use `type_1`)
+3. Attack
+4. Defence
 
 #### Results
 
