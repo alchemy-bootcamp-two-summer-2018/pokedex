@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <Pokemon v-for="pokemon in pokemons"
+    <Tile v-for="pokemon in pokemons"
       v-bind:key="pokemon.pokemon"
       v-bind:pokemon="pokemon"/>
   </ul>   
@@ -8,7 +8,7 @@
 
 <script>
 import pokedex from '../../pokedex.js';
-import Pokemon from './Pokemon.vue';
+import Tile from './Tile.vue';
 
 export default {
   data() {
@@ -17,7 +17,7 @@ export default {
     };
   },
   components: {
-    Pokemon
+    Tile
   }
 };
 </script>

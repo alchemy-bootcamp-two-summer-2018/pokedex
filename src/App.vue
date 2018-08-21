@@ -4,7 +4,7 @@
     <header>
     </header>
     <main>
-      <PokemonList />
+      <Results />
     </main>
     
   </div>
@@ -12,12 +12,12 @@
 
 <script>
 
-import PokemonList from './components/PokemonList.vue';
+import Results from './components/Results.vue';
 
 export default {
   name: 'app',
   components: {
-    PokemonList    
+    Results    
   }
 };
 </script>
