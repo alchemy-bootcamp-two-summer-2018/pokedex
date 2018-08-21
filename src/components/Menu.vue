@@ -1,6 +1,6 @@
 <template>
   <section>
-    <p>I'm the menu</p>
+    <h2>Options:</h2>
     <PokeFilter/>
     <Sort/>
   </section>
@@ -18,5 +18,9 @@ export default {
 </script>
 
 <style scoped>
+
+h2 {
+  margin: 15px;
+}
 
 </style>
