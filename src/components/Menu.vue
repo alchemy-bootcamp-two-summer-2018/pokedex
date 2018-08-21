@@ -1,10 +1,19 @@
 <template>
-  <p>I'm the menu</p>
+  <section>
+    <p>I'm the menu</p>
+    <PokeFilter/>
+    <Sort/>
+  </section>
 </template>
 
 <script>
-export default {
+import PokeFilter from './PokeFilter.vue';
+import Sort from './Sort.vue';
 
+export default {
+  components: {
+    PokeFilter, Sort
+  }
 };
 </script>
 

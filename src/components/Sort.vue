@@ -1,5 +1,5 @@
 <template>
-  
+  <p>I'm the sort</p>
 </template>
 
 <script>

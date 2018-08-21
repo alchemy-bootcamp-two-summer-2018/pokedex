@@ -1,10 +1,17 @@
 <template>
-  <p>I'm the results</p>
+  <section>
+    <p>I'm the results</p>
+    <Tile/>
+  </section>
 </template>
 
 <script>
-export default {
+import Tile from './Tile.vue';
 
+export default {
+  components: {
+    Tile
+  }
 };
 </script>
 

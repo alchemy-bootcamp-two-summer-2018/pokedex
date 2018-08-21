@@ -1,5 +1,5 @@
 <template>
-  
+  <p>I'm the tile</p>
 </template>
 
 <script>
