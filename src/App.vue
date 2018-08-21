@@ -1,20 +1,20 @@
 <template>
   <div id="app">
     <header>
-      <AnimalFilter v-bind:onFilter="handleFilter"/>
-      <AnimalSort v-bind:onSort="handleSort"/>
+      <PokemonFilter v-bind:onFilter="handleFilter"/>
+      <PokemonSort v-bind:onSort="handleSort"/>
     </header>
     <main>
-      <Animals v-bind:filter="filter"
+      <Pokemons v-bind:filter="filter"
         v-bind:sort="sort"/>
     </main>
   </div>
 </template>
 
 <script>
-import Animals from './components/Animals.vue';
-import AnimalFilter from './components/AnimalFilter.vue';
-import AnimalSort from './components/AnimalSort.vue';
+import Pokemons from './components/Pokemons.vue';
+import PokemonFilter from './components/PokemonFilter.vue';
+import PokemonSort from './components/PokemonSort.vue';
 export default {
   name: 'app',
   data() {
@@ -29,9 +29,9 @@ export default {
     };
   },
   components: {
-    Animals,
-    AnimalFilter,
-    AnimalSort
+    Pokemons,
+    PokemonFilter,
+    PokemonSort
   },
   methods: {
     handleFilter(filter) {
