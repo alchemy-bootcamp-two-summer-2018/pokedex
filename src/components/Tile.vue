@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="tile">
     <h2>{{ pokemon.pokemon.toUpperCase() }}</h2>
     <div class="stats">
       <p>Type: {{ pokemon.type_1.toUpperCase() }}</p>
@@ -20,6 +20,14 @@ export default {
 
 img {
   width: 200px;
+}
+
+.tile {
+  border: 2px solid rgb(138, 0, 11);
+}
+
+h2, p {
+  border-bottom: 1px solid rgb(138, 0, 11);
 }
 
 </style>
