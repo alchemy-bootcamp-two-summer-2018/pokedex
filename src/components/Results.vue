@@ -1,7 +1,11 @@
 <template>
   <section>
-    <p>I'm the results</p>
-    <Tile/>
+    <p>Results</p>
+    <Tile
+      v-for="pokemon in list"
+      v-bind:key="pokemon.pokemon"
+      v-bind:pokemon="pokemon"
+    />
   </section>
 </template>
 
@@ -9,6 +13,7 @@
 import Tile from './Tile.vue';
 
 export default {
+  props: ['list'],
   components: {
     Tile
   }
