@@ -27,7 +27,7 @@ h1 {
   padding-top: 15px;
 }
 img {
-  width: 300px;
+  width: 150px;
   margin: 25px;
 }
 
