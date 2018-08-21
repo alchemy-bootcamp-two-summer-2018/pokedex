@@ -58,7 +58,7 @@ Offers controls for filtering:
 * Filtering based on type
     * Notice there are two possible matches for each pokemon!
     * Derive list of types from the pokemon data (put this as an api call)
-    * (HINT: heck out `Set` for deduplication, getting values out of a Set: `[...set.values()]`)
+    * (HINT: look at in-class example for collating all unique types)
 * Pick at least one quantified attribute (attack, defence, etc.) and allow user to enter a minimum value.
     * Make sure your input only allows whole, positive integer values.
 
