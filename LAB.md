@@ -1,4 +1,4 @@
-Pokedex
+pPokedex
 ===
 
 ## Code Wars
