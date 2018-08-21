@@ -1,7 +1,7 @@
 <template>
   <header>
-    <h1>Pokemon</h1>
-    <h2>Gotta catch 'em all!</h2>
+    <h1>Pokedex 9000</h1>
+    <h2>Gotta catch 'em all over again!</h2>
     <img alt="Pokemon logo" src="../assets/logo.png">
   </header>
 </template>
@@ -15,6 +15,11 @@ export default {
 </script>
 
 <style scoped>
+
+header {
+  background-color: rgb(138, 0, 11);
+  color: goldenrod;
+}
 
 h1 {
   font-size: 72px;
