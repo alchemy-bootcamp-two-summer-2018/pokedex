@@ -1,23 +1,36 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <Header/>
     <Menu/>
     <Results/>
   </div>
 </template>
 
 <script>
+import Header from './components/Header.vue';
 import Menu from './components/Menu.vue';
 import Results from './components/Results.vue';
+import pokedex from './services/pokedex.js';
+
 
 export default {
   name: 'app',
+  data() {
+    return {
+      pokedex
+    };
+  },
   components: {
-    Menu, Results
+    Header, Menu, Results
   }
 };
 </script>
 
 <style scoped>
+
+
+
+
+
 
 </style>
