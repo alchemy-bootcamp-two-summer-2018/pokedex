@@ -3,7 +3,7 @@ Pokedex
 
 ## Code Wars
 
-* Complete [Kata One](https://www.codewars.com/kata/insert-dashes) and 
+* Do in class [Kata One](https://www.codewars.com/kata/insert-dashes) and 
 [Kata Two](https://www.codewars.com/kata/simple-validation-of-a-username-with-regex)
 
 ## App
