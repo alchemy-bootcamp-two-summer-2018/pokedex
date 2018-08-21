@@ -1,6 +1,5 @@
 <template>
   <section>
-    <p>Results</p>
     <div id="pokemon-list">
       <Tile
         v-for="pokemon in list"
@@ -23,6 +22,10 @@ export default {
 </script>
 
 <style scoped>
+
+section {
+  margin-top: 15px;
+}
 
 div#pokemon-list{
   margin: 0 3em;
