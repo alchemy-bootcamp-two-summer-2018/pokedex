@@ -7,21 +7,25 @@
 </template>
 
 <script>
-import pokedex from '../../pokedex.js';
+
 import Tile from './Tile.vue';
 
 export default {
-  data() {
-    return {
-      pokemons: pokedex
-    };
-  },
+  props: {
+    pokemons: Array
+  },  
   components: {
     Tile
   }
 };
 </script>
 
-<style>
+<style scoped>
+ul {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: auto auto auto;
+  
+}
 
 </style>

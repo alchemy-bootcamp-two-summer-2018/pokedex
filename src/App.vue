@@ -1,10 +1,11 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <img alt="Pokemon logo" src="./assets/logo.png" width="400px">
     <header>
+      <PokemonFilter />
     </header>
     <main>
-      <Results />
+      <Results v-bind:pokemons="pokemons"/>
     </main>
     
   </div>
@@ -12,12 +13,21 @@
 
 <script>
 
+import pokedex from '../pokedex.js';
 import Results from './components/Results.vue';
+import PokemonFilter from './components/PokemonFilter.vue';
+// import PokemonSort from './components/PokemonSort.vue';
 
 export default {
   name: 'app',
+  data() {
+    return {
+      pokemons: pokedex
+    };
+  },
   components: {
-    Results    
+    Results,
+    PokemonFilter    
   }
 };
 </script>
