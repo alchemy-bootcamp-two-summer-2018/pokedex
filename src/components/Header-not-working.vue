@@ -1,39 +1,31 @@
 <template>
-  <div id="app">
     <header>
       <PokemonFilter v-bind:onFilter="handleFilter"/>
       <PokemonSort v-bind:onSort="handleSort"/>
     </header>
-    <main>
-      <Results v-bind:filter="filter"
-        v-bind:sort="sort"/>
-    </main>
-  </div>
 </template>
 
 <script>
-import Results from './components/Results.vue';
-import PokemonFilter from './components/PokemonFilter.vue';
-import PokemonSort from './components/PokemonSort.vue';
+import PokemonFilter from './PokemonFilter.vue';
+import PokemonSort from './PokemonSort.vue';
 
 export default {
-  name: 'app',
   data() {
     return {
       filter: {
-        type: ''
+        type: '',
+        min: 0
       },
       sort: {
         sort: 'pokemon',
         direction: 1
-      }
+      },
+      onHeader: Function
     };
   },
   components: {
     PokemonFilter,
-    PokemonSort,
-    Results
-
+    PokemonSort
   },
   methods: {
     handleFilter(filter) {
@@ -41,6 +33,13 @@ export default {
     },
     handleSort(sort) {
       this.sort = sort;
+    },
+    ///// ahhhhhhhhhh trying to separate out header
+    handleHeader() {
+      const filter = this.filter;
+      const sort = this.sort;
+      this.onFilter(filter);
+      this.onSort(sort);
     }
   }
 };

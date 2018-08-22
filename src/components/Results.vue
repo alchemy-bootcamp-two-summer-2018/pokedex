@@ -1,3 +1,5 @@
+//create a results view of all the filtered pokemon tiles
+
 <template>
   <ul>
     <Tile v-for="pokemon in sortedPokemons"
@@ -7,7 +9,7 @@
 </template>
 
 <script>
-import pokemonsApi from '../services/pokemonsApi_short';
+import pokemonsApi from '../services/pokemonsApi';
 import Tile from './Tile.vue';
 
 export default {
@@ -17,21 +19,24 @@ export default {
   },
   data() {
     return {
-      pokemons: pokemonsApi.getPokemons()
+      pokemons: pokemonsApi.getPokemons() //get all pokemons in data file
     };
   },
   computed: {
     filteredPokemons() {
       const { type, min } = this.filter;
+  
+      // display all pokemons upon page load
       if(!type && !min) {
-        console.log('1', 'min', min, 'type', type);
         return this.pokemons;
       }
+      // if no type selected, display only according to attack min
       else if(!type){
         return this.pokemons.filter(pokemon => {
           return pokemon.attack > min;
         });
       }
+      // if both type and min are specified, filter according to both
       else {
         return this.pokemons.filter(pokemon => {
           return pokemon.attack >= min 
@@ -41,9 +46,12 @@ export default {
     },
     sortedPokemons() {
       let { sort, direction } = this.sort;
+
+      // sort by pokemon name by default
       if(!sort) {
-        sort = 'pokemon'; //pokemon or name?
+        sort = 'pokemon'; 
       }
+      // sort in ascending or decending order based on direction chosen
       return this.filteredPokemons.slice().sort((a, b) => {
         if(a[sort] > b[sort]) return 1 * direction;
         if(b[sort] > a[sort]) return -1 * direction;

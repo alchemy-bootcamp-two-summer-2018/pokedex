@@ -14,9 +14,10 @@
     </select>
     <p> </p>
 
-    <p>Minimum attack: {{ minSelected }}</p>
+    <!-- use regex to only allow positive integers -->
+    <p>Minimum attack:
     <input v-model="minSelected" pattern="^[0-9]*$" placeholder="Minimum Attack">
-
+    </p>
     <p>
       <button>Apply</button>
     </p>
@@ -24,16 +25,16 @@
 </template>
 
 <script>
-import pokemonsApi from '../services/pokemonsApi_short';
+import pokemonsApi from '../services/pokemonsApi';
 export default {
   props: {
     onFilter: Function
   },
   data() {
     return {
-      types: pokemonsApi.getTypes(),
-      selected: '',
-      minSelected: 0,
+      types: pokemonsApi.getTypes(), //get all types for dropdown menu
+      selected: '', //initialize type filter to blank
+      minSelected: 0, //initialize min preference to zero
     };
   },
   methods: {
@@ -43,7 +44,6 @@ export default {
         min: this.minSelected
       };
       this.onFilter(filter);
-      console.log('in handle submit', filter.type, filter.min)
     }
   }
 };

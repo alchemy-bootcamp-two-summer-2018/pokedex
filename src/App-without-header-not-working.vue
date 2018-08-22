@@ -1,23 +1,20 @@
 <template>
-  <div id="app">
-    <header>
-      <PokemonFilter v-bind:onFilter="handleFilter"/>
-      <PokemonSort v-bind:onSort="handleSort"/>
-    </header>
+  <div id="app2">
+      <!-- ahhhhh trying to separate out header -->
+    <Header v-bind:onFilter="handleFilter" v-bind:onSort="handleSort"/>
     <main>
-      <Results v-bind:filter="filter"
-        v-bind:sort="sort"/>
+      <Results v-bind:filter="filter" v-bind:sort="sort"/>
     </main>
   </div>
 </template>
 
 <script>
+
+import Header from './components/Header.vue';
 import Results from './components/Results.vue';
-import PokemonFilter from './components/PokemonFilter.vue';
-import PokemonSort from './components/PokemonSort.vue';
 
 export default {
-  name: 'app',
+  name: 'app2',
   data() {
     return {
       filter: {
@@ -30,8 +27,7 @@ export default {
     };
   },
   components: {
-    PokemonFilter,
-    PokemonSort,
+    Header,
     Results
 
   },
