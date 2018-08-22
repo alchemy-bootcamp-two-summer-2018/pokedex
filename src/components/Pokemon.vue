@@ -1,11 +1,13 @@
 <template>
-  <li>
-    <h3>{{ pokemon.pokemon }}</h3>
-    <img class="images" v-bind:src="pokemon.url_image">
-    <p>special-attack: {{ pokemon.special_attack }}</p>
-    <p>pokebase: {{ pokemon.pokebase }}</p>
-    <p>speed: {{ pokemon.speed }}</p>
-  </li>
+  <div class="container">
+    <li>
+     <h3>{{ pokemon.pokemon }}</h3>
+      <img class="images" v-bind:src="pokemon.url_image">
+      <p>type: {{ pokemon.type_1}}</p>
+      <p>special-attack: {{ pokemon.special_attack }}</p>
+      <p>speed: {{ pokemon.speed }}</p>
+    </li>
+  </div>
 </template>
 
 <script>
@@ -17,12 +19,15 @@ export default {
 </script>
 
 <style scoped>
-li {
-  list-style: none;
-  text-align: center;
-  border: 1px solid #aaa;
+  .container {
+    border: 1px solid #aaa;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    background-color: cornsilk;
+
 }
 .images {
-  width:100px;
+  width:150px;
 }
 </style>

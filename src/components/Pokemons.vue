@@ -22,11 +22,13 @@ export default {
   },
   computed: {
     filteredPokemons() {
-      const { size } = this.filter;
-      if(!size) return this.pokemons;
+      const { speed } = this.filter;
+      if(!speed) return this.pokemons;
+      const { type } = this.type;
+      if(!type) return this.pokemons;
 
       return this.pokemons.filter(pokemon => {
-        return pokemon.size === size;
+        return pokemon.speed === speed;
       });
     },
     sortedPokemons() {
