@@ -31,7 +31,7 @@ export default {
   computed: {
     filtered() {
       const { type } = this.filter;
-      return this.pokedex.slice().filter( () => type === 'all');
+      return this.pokedex.slice().filter( (p) => p.type_1 === 'fire');
 
     },
     list() {
