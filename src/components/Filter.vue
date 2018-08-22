@@ -1,5 +1,5 @@
 <template>
-    <form>
+    <form v-on:submit.prevent="handleSubmit">
         <p>
             <label>
                 Size:
@@ -20,20 +20,24 @@
 </template>
 
 <script>
+import pokedex from '../services/pokedex.js';
 
 export default {
   props: {
-    onFilter: Function,
-    types: Array
+    onFilter: Function
   },
   data() {
     return {
+      types: pokedex.getTypes(),
       selected: '' 
     };
   },
   methods: {
     handleSubmit() {
-        
+      const filter = {
+        size: this.selected
+      };
+      this.onFilter(filter);
     }
   }
 };

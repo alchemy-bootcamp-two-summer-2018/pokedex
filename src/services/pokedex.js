@@ -25633,13 +25633,13 @@ const pokedex = [
   }
 ];
 
-const allType1 = pokedex.map(pokemon => {
+const allTypes = pokedex.map(pokemon => {
   return pokemon.type_1;
 });
 
 const seen = {};
 
-const types = allType1.filter(type => {
+const types = allTypes.filter(type => {
   if(seen[type]) return false;
   seen[type] = true;
   return true;
