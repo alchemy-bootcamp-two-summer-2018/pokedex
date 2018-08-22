@@ -1,4 +1,4 @@
-export default [
+const pokedex = [
   {
     'pokemon': 'bulbasaur',
     'id': 1,
@@ -25632,3 +25632,37 @@ export default [
     'pokedex': 'http://www.pokemon.com/us/pokedex/volcanion'
   }
 ];
+
+const defense = pokedex.map(pokemon => {
+  return pokemon.defense;
+});
+
+const allType1 = pokedex.map(pokemon => {
+  return pokemon.type_1;
+});
+
+const allType2 = pokedex.map(pokemon => {
+  return pokemon.type_2;
+});
+
+const allTypes = allType1.concat(allType2);
+
+const seen = {};
+
+const types = allTypes.filter(type => {
+  if(seen[type]) return false;
+  seen[type] = true;
+  return true;
+});
+
+export default {
+  getPokedex() {
+    return pokedex;
+  },
+  getTypes() {
+    return types;
+  },
+  getDefense() {
+    return defense;
+  }
+};
