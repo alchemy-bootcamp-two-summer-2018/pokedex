@@ -25633,6 +25633,10 @@ const pokedex = [
   }
 ];
 
+const defense = pokedex.map(pokemon => {
+  return pokemon.defense;
+});
+
 const allType1 = pokedex.map(pokemon => {
   return pokemon.type_1;
 });
@@ -25657,5 +25661,8 @@ export default {
   },
   getTypes() {
     return types;
+  },
+  getDefense() {
+    return defense;
   }
 };

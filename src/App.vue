@@ -24,7 +24,8 @@ export default {
   data() {
     return { 
       filter: {
-        type: ''
+        type: '',
+        minSelected: 0
       },
       sort: { 
         sort: 'pokemon',

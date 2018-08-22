@@ -1,16 +1,23 @@
 <template>
     <form v-on:submit.prevent="handleSubmit">
         <p>
-            <label>
-                <select v-model="selected">
-                    <option value="">All types</option>
-                    <option v-for="type in types"
-                        v-bind:key="type"
-                        v-bind:value="type">
-                        {{ type }}
-                    </option>
-                </select>
-            </label>
+            <select v-model="selected">
+              <option value="">All types</option>
+              <option v-for="type in types"
+                  v-bind:key="type"
+                  v-bind:value="type">
+                  {{ type }}
+              </option>
+            </select>
+        </p>
+        <p>Minimum Defense:</p>
+        <p>
+          <select v-model="minSelected">
+            <option value="0">0</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="150">150</option>
+          </select>
         </p>
         <p>
             <button>Apply</button>
@@ -28,13 +35,16 @@ export default {
   data() {
     return {
       types: pokedex.getTypes(),
-      selected: '' 
+      defense: pokedex.getDefense(),
+      selected: '',
+      minSelected: 0
     };
   },
   methods: {
     handleSubmit() {
       const filter = {
-        type: this.selected
+        type: this.selected,
+        min: this.minSelected.value
       };
       this.onFilter(filter);
     }
