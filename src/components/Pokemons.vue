@@ -1,6 +1,6 @@
 <template>
     <ul>
-        <Pokemon v-for="pokemon in pokemons"
+        <Pokemon v-for="pokemon in filteredPokemons"
             v-bind:key="pokemon.pokemon" 
             v-bind:pokemon="pokemon"/>
     </ul>
@@ -26,12 +26,12 @@ export default {
     },
     computed: {
         filteredPokemons() {
-            
+            console.log("hi")
             const { type } = this.filter;
             if (!type) return this.pokemons;
 
             return this.pokemons.filter(pokemon => {
-                return pokemon.type === type;
+                return pokemon.type_1 === type;
             });
         }
     },
