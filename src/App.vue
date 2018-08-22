@@ -5,6 +5,7 @@
       v-bind:filter="filter"
       v-bind:types="types"
       v-bind:sort="sort"
+      v-bind:onAttackFilter="handleAttackFilter"
     />
     <Results 
       v-bind:sorted="sorted"
@@ -27,7 +28,8 @@ export default {
     return {
       pokedex,
       filter: {
-        type: 'all'
+        type: 'all',
+        attack: ''
       },
       sort: {
         props: 'id'
@@ -40,8 +42,13 @@ export default {
   computed: {
     filtered() {
       const { type } = this.filter;
-      console.log('filtered', this.pokedex.slice().filter(pokemon => type === 'all' || pokemon.type_1 === type || pokemon.type_2 === type));
-      return this.pokedex.slice().filter(pokemon => type === 'all' || pokemon.type_1 === type || pokemon.type_2 === type);
+      const typeFiltered = this.pokedex.slice().filter(pokemon => type === 'all' || pokemon.type_1 === type || pokemon.type_2 === type);
+
+
+      // we need to remove all in typeFiltered if they are below minimum attack
+      const attackFiltered = typeFiltered;
+
+      return attackFiltered;
     },
     sorted() {
       const { props } = this.sort;
@@ -58,8 +65,12 @@ export default {
       const type2 = this.pokedex.map(pokemon => pokemon.type_2);
       const allTypes = new Set(type1.concat(type2));
       return [...allTypes.values()];
+    },
+    methods: {
+      handleAttackFilter(attackFilter) {
+        this.attackFilter = attackFilter;
+      }
     }
-
   }
 };
 </script>

@@ -31,7 +31,14 @@
 
 <script>
 export default {
-  props: ['types', 'filter']
+  props: ['types', 'filter'],
+  methods: {
+    handleSubmit() {
+      const filter = {
+        
+      }
+    }
+  }
 
 };
 </script>
