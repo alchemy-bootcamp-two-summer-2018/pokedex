@@ -1,7 +1,7 @@
 <template>
 <label>
   Sort By:
-  <select v-model="sort.props">
+  <select v-model="sort.sorted">
     <option value="id">Sort</option>
     <option value="pokemon">Name</option>
     <option value="type_1">Type</option>

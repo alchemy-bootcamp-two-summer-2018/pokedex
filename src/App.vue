@@ -20,7 +20,7 @@ export default {
         type: 'all'
       },
       sort: {
-        props: 'id'
+        sorted: 'id'
       }
     };
   },
@@ -35,7 +35,14 @@ export default {
     },
 
     sorted() {
-      return this.filtered;
+      const { sorted } = this.sort;
+      return this.filtered.slice().sort((a, b) => {
+        const sortedA = a[sorted];
+        const sortedB = b[sorted];
+        if(sortedA > sortedB) return 1;
+        if(sortedA < sortedB) return -1;
+        return 0;
+      });
     },
 
     types() {
