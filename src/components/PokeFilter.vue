@@ -1,7 +1,7 @@
 <template>
-  <div id="filters">
+  <div id="filter-div">
 
-    <div id="type-filter">
+    <div id="type-filter" class="filters">
       <p>Filter by type:</p>
       <select v-model="filter.type">
         
@@ -18,9 +18,14 @@
       </select>
     </div>
 
-    <div id="attack-filter">
+    <div id="attack-filter" class="filters">
       <p>Minimum attack:</p>
       <input v-model="filter.attack" placeholder="Enter min attack value">
+    </div>
+
+    <div id="defense-filter" class="filters">
+      <p>Minimum defense:</p>
+      <input v-model="filter.defense" placeholder="Enter min defense value">
     </div>
     
   </div>
@@ -29,21 +34,18 @@
 <script>
 export default {
   props: ['types', 'filter'],
-  // methods: {
-  //   handleSubmit() {
-  //     const filter = {
-        
-  //     }
-  //   }
-  // }
-
 };
 </script>
 
 <style scoped>
 
-#filter {
+#filter-div {
   padding: 15px;
+}
+
+.filters {
+  padding: 15px;
+  border: solid 1px rgb(138, 0, 11);
 }
 
 p, select, div {
