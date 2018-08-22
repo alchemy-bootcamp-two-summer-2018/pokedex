@@ -27,6 +27,9 @@ export default {
 section {
   margin: 15px;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 h2 {

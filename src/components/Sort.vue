@@ -18,13 +18,13 @@ export default {
 
 <style scoped>
 
-p, select, div, form {
-  display: inline;
-}
-
 #sort {
   padding: 15px;
-  border: solid 1px rgb(138, 0, 11);
+  /* border: solid 1px rgb(138, 0, 11); */
+}
+
+p, select {
+  display: inline;
 }
 
 </style>

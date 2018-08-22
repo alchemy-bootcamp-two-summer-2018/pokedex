@@ -41,14 +41,16 @@ export default {
 
 #filter-div {
   padding: 15px;
+  display: flex;
+  justify-content: center;
 }
 
 .filters {
   padding: 15px;
-  border: solid 1px rgb(138, 0, 11);
+  /* border: solid 1px rgb(138, 0, 11); */
 }
 
-p, select, div {
+p, select, div.filters {
   display: inline;
 }
 
