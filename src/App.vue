@@ -19,15 +19,24 @@ export default {
   name: 'app',
   data() {
     return {
-      pokedex
+      pokedex,
+      filter: {
+        type: 'all'
+      }
     };
   },
   components: {
     Header, Menu, Results, Footer
   },
   computed: {
+    filtered() {
+      const { type } = this.filter;
+      return this.pokedex.slice().filter( () => type === 'all');
+
+    },
     list() {
-      return this.pokedex;
+      
+      return this.filtered;
     }
   }
 };
