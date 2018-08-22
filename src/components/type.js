@@ -2,12 +2,17 @@ import pokedex from "../pokedex.js"
 
 
 
+const pokemons = pokedex;
+
+
+const allTypes = pokemons.map(pokemon => {
+    return pokemon.type_1;
+});
+
+
 const seen ={};
 
-const allTypes = pokedex.map(pokemon => {
-    return pokemon.type_1;
-})
-const filteredTypes = allTypes.filter(type => {
+const types = allTypes.filter(type => {
   if(seen[type]) return false;
   seen[type] = true;
   return true;
@@ -15,7 +20,10 @@ const filteredTypes = allTypes.filter(type => {
 
 
 export default {
+    getPokemons() {
+        return pokemons;
+    },
     getTypes() {
-        return filteredTypes;
+        return types;
     }
 }

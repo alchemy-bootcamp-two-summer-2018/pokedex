@@ -4,8 +4,9 @@
       <PokemonFilter v-bind:onFilter="handleFilter"/>
       <!-- <PokemonSort/> -->
     </header>
-    <Pokemons v-bind:filter="filter"/>
-
+    <main>
+      <Pokemons v-bind:filter="filter"/>
+    </main>
   </div>
 </template>
 
@@ -15,18 +16,19 @@ import Pokemons from './components/Pokemons.vue';
 import PokemonFilter from './components/PokemonFilter.vue'
 
 
+
 export default {
   name: 'app',
   data() {
     return {
       filter: {
-        type: ""
+        type: ''
       }
     }
   },
   components: {
     Pokemons,
-    PokemonFilter
+    PokemonFilter,
     // PokemonSort
   }, 
   methods: {
@@ -34,7 +36,7 @@ export default {
       this.filter = filter;
     }
   }
-}
+};
 </script>
 
 <style>

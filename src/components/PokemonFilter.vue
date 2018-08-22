@@ -21,7 +21,8 @@
 
 <script>
 // import pokedex from "../pokedex.js";
-import type from "./type.js"
+import type from "./type.js";
+import Pokemon from './Pokemon.vue';
 
 export default {
     props: {
@@ -30,7 +31,6 @@ export default {
     data(){
         return {
             types: type.getTypes(),
-            // pokemon: pokedex,
             selected: ''
         };
     },
@@ -38,11 +38,14 @@ export default {
         handleSubmit() {
             const filter = {
                 type: this.selected
-        };
-        this.onFilter(filter);
+            };
+            this.onFilter(filter);
         }
+    },
+    components: {
+        Pokemon
     }
-}
+};
 
 </script>
 
