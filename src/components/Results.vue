@@ -1,8 +1,8 @@
 <template>
     <div>
         <Pokemon v-for="pokemon in sortedPokedex"
-        v-bind:key="pokemon.pokemon"
-        v-bind:pokemon="pokemon"/>
+          :key="pokemon.pokemon"
+          :pokemon="pokemon"/>
     </div>
 </template>
 
