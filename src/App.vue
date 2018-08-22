@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <img alt="Pokemon logo" src="./assets/logo.png" width="400px">
     <header>
-      <PokemonFilter />
+      <img alt="Pokemon logo" src="./assets/logo.png" width="400px">
+      <PokemonFilter v-bind:onFilter="handleFilter"/>
     </header>
     <main>
-      <Results v-bind:pokemons="pokemons"/>
+      <Results v-bind:filter="filter"/>
     </main>
     
   </div>
@@ -22,12 +22,20 @@ export default {
   name: 'app',
   data() {
     return {
+      filter: {
+        type: ''
+      },
       pokemons: pokedex
     };
   },
   components: {
     Results,
     PokemonFilter    
+  },
+  methods: {
+    handleFilter(filter) {
+      this.filter = filter;
+    }
   }
 };
 </script>

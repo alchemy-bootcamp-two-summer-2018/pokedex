@@ -20,15 +20,27 @@
 </template>
 
 <script>
-// import pokedex from '../../pokedex.js';
-import types from '../../types.js';
+
+import pokedex from '../../pokedex.js';
+
 export default {
+  props: {
+    onFilter: Function
+  },
   data() {
     return {
-      types: types.getTypes()
+      types: pokedex.getTypes(),
+      selected: ''
     };
+  },
+  methods: {
+    handleSubmit() {
+      const filter = {
+        type: this.selected
+      };
+      this.onFilter(filter);
+    }
   }
-
 };
 </script>
 

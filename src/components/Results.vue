@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <Tile v-for="pokemon in pokemons"
+    <Tile v-for="pokemon in filteredPokemons"
       v-bind:key="pokemon.pokemon"
       v-bind:pokemon="pokemon"/>
   </ul>   
@@ -12,7 +12,17 @@ import Tile from './Tile.vue';
 
 export default {
   props: {
-    pokemons: Array
+    filter: Object
+  },
+  computed: {
+    filteredPokemons() {
+      const { type } = this.filter;
+      if(!type) return this.pokemons;
+
+      return this.pokemons.filter(pokemon => {
+        return pokemon.type === type;
+      });
+    }
   },  
   components: {
     Tile
