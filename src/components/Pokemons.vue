@@ -1,3 +1,4 @@
+//this will be results.vue
 <template>
     <ul>
         <Pokemon v-for="pokemon in sortedPokemons"
