@@ -25633,9 +25633,15 @@ const pokedex = [
   }
 ];
 
-const allTypes = pokedex.map(pokemon => {
+const allType1 = pokedex.map(pokemon => {
   return pokemon.type_1;
 });
+
+const allType2 = pokedex.map(pokemon => {
+  return pokemon.type_2;
+});
+
+const allTypes = allType1.concat(allType2);
 
 const seen = {};
 
