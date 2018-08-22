@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <Header v-bind:types="types" v-bind:filter="filter"/>
-    <Results v-bind:list="list"/>
+    <Header v-bind:types="types" v-bind:filter="filter" v-bind:sort="sort"/>
+    <Results v-bind:sorted="sorted"/>
   </div>
 </template>
 
@@ -18,6 +18,9 @@ export default {
       pokedex,
       filter: {
         type: 'all'
+      },
+      sort: {
+        props: 'id'
       }
     };
   },
@@ -31,7 +34,7 @@ export default {
       return this.pokedex.slice().filter(p => type === 'all' || p.type_1 === type || p.type_2 === type);
     },
 
-    list() {
+    sorted() {
       return this.filtered;
     },
 

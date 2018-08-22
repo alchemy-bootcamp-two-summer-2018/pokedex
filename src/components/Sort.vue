@@ -1,19 +1,19 @@
 <template>
 <label>
   Sort By:
-  <select>
-    <option>Sort</option>
-    <option>Name</option>
-    <option>Type</option>
-    <option>Attack</option>
-    <option>Defense</option>
+  <select v-model="sort.props">
+    <option value="id">Sort</option>
+    <option value="pokemon">Name</option>
+    <option value="type_1">Type</option>
+    <option value="attack">Attack</option>
+    <option value="defense">Defense</option>
   </select>
 </label>
 </template>
 
 <script>
 export default {
-
+  props:['sort']
 };
 </script>
 

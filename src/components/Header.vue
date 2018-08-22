@@ -1,7 +1,7 @@
 <template>
   <header>
    <PokeFilter v-bind:filter="filter" v-bind:types="types"/>
-   <Sort/>
+   <Sort v-bind:sort="sort"/>
   </header>
 </template>
 
