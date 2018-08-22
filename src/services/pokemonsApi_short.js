@@ -1,4 +1,4 @@
-import pokemons from '../assets/pokedex.js';
+import pokemons from '../assets/pokedex_short.js';
 
 const allTypes1 = pokemons.map(pokemon => {
   return pokemon.type_1;

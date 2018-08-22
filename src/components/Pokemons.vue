@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import pokemonsApi from '../services/pokemonsApi';
+import pokemonsApi from '../services/pokemonsApi_short';
 import Pokemon from './Pokemon.vue';
 
 export default {

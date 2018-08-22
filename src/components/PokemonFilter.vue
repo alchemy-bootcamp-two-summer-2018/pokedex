@@ -15,7 +15,7 @@
     <p> </p>
 
     <p>Minimum attack: {{ minSelected }}</p>
-    <input v-model="minSelected" placeholder="Minimum Attack">
+    <input v-model="minSelected" pattern="^[0-9]*$" placeholder="Minimum Attack">
 
     <p>
       <button>Apply</button>
@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import pokemonsApi from '../services/pokemonsApi';
+import pokemonsApi from '../services/pokemonsApi_short';
 export default {
   props: {
     onFilter: Function
