@@ -4,6 +4,7 @@
     <Menu 
       v-bind:filter="filter"
       v-bind:types="types"
+      v-bind:sort="sort"
     />
     <Results 
       v-bind:list="list"
@@ -27,6 +28,9 @@ export default {
       pokedex,
       filter: {
         type: 'all'
+      },
+      sort: {
+        props: 'id'
       }
     };
   },

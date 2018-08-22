@@ -6,7 +6,7 @@
       v-bind:types="types"
     />
     <Sort
-    
+      v-bind:sort="sort"
     />
   </section>
 </template>
