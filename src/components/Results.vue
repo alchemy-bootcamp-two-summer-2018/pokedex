@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <Tile v-for="pokemon in filteredPokemons"
+    <Tile v-for="pokemon in sortedPokemons"
       v-bind:key="pokemon.pokemon"
       v-bind:pokemon="pokemon"/>
   </ul>   
@@ -12,7 +12,8 @@ import Tile from './Tile.vue';
 
 export default {
   props: {
-    filter: Object
+    filter: Object,
+    sort: Object
   },
   computed: {
     filteredPokemons() {
@@ -21,6 +22,18 @@ export default {
 
       return this.pokemons.filter(pokemon => {
         return pokemon.type === type;
+      });
+    },
+    sortedPokemons() {
+      let { sort, direction } = this.sort;
+      if(!sort) {
+        sort = 'pokemon';
+      }
+
+      return this.filteredPokemons.slice().sort((a, b) => {
+        if(a[sort] > b[sort]) return 1 * direction;
+        if(b[sort] > a[sort]) return -1 * direction;
+        if(b[sort] === a[sort]) return 0;
       });
     }
   },  
