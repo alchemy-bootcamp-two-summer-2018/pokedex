@@ -25639,7 +25639,7 @@ const allNames = characters.map(character => {
 
 const seen = {};
 
-const types = allTypes.filter(type => {
+const types = allNames.filter(type => {
   if(seen[type]) return false;
   seen[type] = true;
   return true;
