@@ -24,7 +24,7 @@ export default {
 <style scoped>
 
 section {
-  margin-top: 15px;
+  margin: 15px 0px;
 }
 
 div#pokemon-list{
