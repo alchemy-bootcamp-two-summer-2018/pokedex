@@ -20,12 +20,20 @@
 
     <div id="attack-filter" class="filters">
       <p>Minimum attack:</p>
-      <input v-model="filter.attack" type="number" placeholder="Enter min attack value">
+      <input 
+        v-model="filter.attack" 
+        type="number" 
+        placeholder="Enter min attack value"
+      >
     </div>
 
     <div id="defense-filter" class="filters">
       <p>Minimum defense:</p>
-      <input v-model="filter.defense" type="number" placeholder="Enter min defense value">
+      <input 
+        v-model="filter.defense" 
+        type="number" 
+        placeholder="Enter min defense value"
+      >
     </div>
     
   </div>
