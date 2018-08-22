@@ -5,7 +5,7 @@
       <CharacterSort v-bind:onSort="handleSort"/>
     </header>
     <main>
-      <Character v-bind:filter="filter"
+      <Characters v-bind:filter="filter"
         v-bind:sort="sort"/>
     </main>
   </div>
@@ -43,12 +43,5 @@ export default {
   }
 };
 </script>
-
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-}
 </style>

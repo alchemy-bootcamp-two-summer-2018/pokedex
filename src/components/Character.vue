@@ -1,8 +1,10 @@
 <template>
   <li>
     <h3>{{ character.name }}</h3>
-    <p>category: {{ character.category }}</p>
+    <img class="images" v-bind:src="character.url_image">
     <p>type: {{ character.type }}</p>
+    <p>attack: {{ character.attack }}</p>
+    <p>defense: {{ character.defense }}</p>
   </li>
 </template>
 
