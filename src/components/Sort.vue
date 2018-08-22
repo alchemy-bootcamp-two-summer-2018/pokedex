@@ -42,4 +42,23 @@ export default {
 
 <style>
 
+select {
+    width: 200px;
+    height: 50px;
+    font-size: 14px;
+    margin-right: 20px;
+}
+label {
+    color: white;
+    margin-right: 20px;
+}
+button {
+    width: 200px;
+    background: #d64444;
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    font-weight: bold;
+}
 </style>

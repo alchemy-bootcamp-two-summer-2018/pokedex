@@ -1,0 +1,9 @@
+* {
+box-sizing: border-box;
+}
+
+body {
+    background-image: url("/pokemon-bg.jpg");
+    size: cover;
+    margin: 0;
+}
