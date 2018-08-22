@@ -1,6 +1,5 @@
 <template>
   <section>
-    <h2>Options:</h2>
     <PokeFilter 
       v-bind:filter="filter"
       v-bind:types="types"
@@ -24,6 +23,11 @@ export default {
 </script>
 
 <style scoped>
+
+section {
+  margin: 15px;
+  padding: 20px;
+}
 
 h2 {
   margin: 15px;
