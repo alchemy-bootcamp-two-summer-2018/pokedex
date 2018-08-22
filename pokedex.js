@@ -1,4 +1,4 @@
-let characters =[
+let characters = [
   {
     'pokemon': 'bulbasaur',
     'id': 1,
