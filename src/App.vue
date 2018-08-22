@@ -5,7 +5,7 @@
     v-bind:types="types" 
     v-bind:filter="filter" 
     v-bind:sort="sort"
-    v-bind:onattackSort="handleAttack"/>
+    />
     <Results v-bind:sortedList="sortedList"/>
   </div>
 </template>
