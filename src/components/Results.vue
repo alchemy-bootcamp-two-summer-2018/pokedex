@@ -13,7 +13,8 @@ import Tile from './Tile.vue';
 export default {
   props: {
     filter: Object,
-    sort: Object
+    sort: Object,
+    pokemons: Array
   },
   computed: {
     filteredPokemons() {
@@ -21,7 +22,7 @@ export default {
       if(!type) return this.pokemons;
 
       return this.pokemons.filter(pokemon => {
-        return pokemon.type === type;
+        return pokemon.type_1 === type;
       });
     },
     sortedPokemons() {

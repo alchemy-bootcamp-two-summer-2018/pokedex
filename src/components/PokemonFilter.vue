@@ -7,7 +7,7 @@
           <option value="">All Types</option>
           <option v-for="type_1 in types"
             v-bind:key="type_1"
-            v-bind:value="type">
+            v-bind:value="type_1">
             {{ type_1 }}
           </option>
         </select>

@@ -7,7 +7,8 @@
     </header>
     <main>
       <Results v-bind:filter="filter"
-        v-bind:sort="sort"/>
+        v-bind:sort="sort"
+        v-bind:pokemons="pokedex"/>
     </main>
     
   </div>
