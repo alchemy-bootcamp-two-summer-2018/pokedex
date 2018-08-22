@@ -22,22 +22,20 @@ export default {
   },
   computed: {
     filteredPokemons() {
-      console.log('truth', !type, '1', 'min', min, 'type', '!' + type + '!');
       const { type, min } = this.filter;
       if(!type && !min) {
         console.log('1', 'min', min, 'type', type);
         return this.pokemons;
       }
       else if(!type){
-        console.log('truth', !type, '2', 'min', min, 'type', type);
         return this.pokemons.filter(pokemon => {
           return pokemon.attack > min;
         });
       }
       else {
-        console.log('truth', !type, '3', 'min', min, 'type', type);
         return this.pokemons.filter(pokemon => {
-          return pokemon.attack >= min && pokemon.type_1 === type;
+          return pokemon.attack >= min 
+          && (pokemon.type_1 === type || pokemon.type_2 === type);
         });
       }
     },
