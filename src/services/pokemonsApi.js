@@ -1,4 +1,4 @@
-export default [
+let pokemons = [
   {
     'pokemon': 'bulbasaur',
     'id': 1,
@@ -25632,3 +25632,23 @@ export default [
     'pokedex': 'http://www.pokemon.com/us/pokedex/volcanion'
   }
 ];
+const allSizes = pokemons.map(pokemon => {
+  return pokemon.size;
+});
+
+const seen = {};
+
+const sizes = allSizes.filter(size => {
+  if(seen[size]) return false;
+  seen[size] = true;
+  return true;
+});
+
+export default {
+  getPokemons() {
+    return pokemons;
+  },
+  getSizes() {
+    return sizes;
+  }
+};
