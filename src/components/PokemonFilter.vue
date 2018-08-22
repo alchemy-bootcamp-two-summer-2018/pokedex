@@ -5,8 +5,8 @@
         Type:
         <select v-model="selected">
           <option value="">All Types</option>
-          <option v-for="type in types"
-            v-bind:key ="type"
+          <option v-for="type_1 in types"
+            v-bind:key="type_1"
             v-bind:value="type">
             {{ type_1 }}
           </option>
@@ -20,11 +20,12 @@
 </template>
 
 <script>
-import pokedex from '../../pokedex.js';
+// import pokedex from '../../pokedex.js';
+import types from '../../types.js';
 export default {
   data() {
     return {
-      pokemons: pokedex
+      types: types.getTypes()
     };
   }
 

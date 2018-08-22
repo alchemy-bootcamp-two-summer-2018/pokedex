@@ -1,8 +1,10 @@
 <template>
   <li>
-    <img class="pokemon-background" v-bind:src="pokemon.url_image"></img>
-    <p>{{ pokemon.pokemon }}</p>
-    <p>{{ pokemon.type_1 }}</p>
+    <img class="pokemon-background" v-bind:src="pokemon.url_image"/>
+    <p><strong>{{ pokemon.pokemon }}</strong></p>
+    <p><em>Type:</em> {{ pokemon.type_1 }}</p>
+    <p><em>Attack:</em> {{ pokemon.attack }}</p>
+    <p><em>Defense:</em> {{ pokemon.defense }}</p>
   </li>    
 </template>
 
