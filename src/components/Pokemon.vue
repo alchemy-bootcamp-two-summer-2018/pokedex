@@ -5,6 +5,7 @@
         <p>type 2: {{ pokemon.type_2 }}</p>
     <p>attack: {{ pokemon.attack }}</p>
     <p>defense: {{ pokemon.defense }}</p>
+    <img v-bind:src="pokemon.url_image" alt="pokemon.url_image" width="200">
   </li>
 </template>
 

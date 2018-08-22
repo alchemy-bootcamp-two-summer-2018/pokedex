@@ -13,11 +13,10 @@
         </option>
     </select>
     <p> </p>
-    <label>
-        Filter by Minimum Attack:
-    </label>
-    <input v-model="minimum" placeholder="Minimum Attack">
-    <p>Minimum attack: {{ minimum }}</p>
+
+    <p>Minimum attack: {{ minSelected }}</p>
+    <input v-model="minSelected" placeholder="Minimum Attack">
+
     <p>
       <button>Apply</button>
     </p>
@@ -40,7 +39,8 @@ export default {
   methods: {
     handleSubmit() {
       const filter = {
-        type: this.selected
+        type: this.selected,
+        min: this.minSelected
       };
       this.onFilter(filter);
     }

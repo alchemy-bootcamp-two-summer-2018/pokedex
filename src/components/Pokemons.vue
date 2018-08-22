@@ -22,11 +22,20 @@ export default {
   },
   computed: {
     filteredPokemons() {
-      const { type } = this.filter;
-      if(!type) return this.pokemons;
-      return this.pokemons.filter(pokemon => {
-        return pokemon.type_1 === type;
-      });
+      const { type, min } = this.filter;
+      if(!type && !min) {
+        return this.pokemons;
+      }
+      else if(!min){
+        return this.pokemons.filter(pokemon => {
+          return pokemon.type_1 === type;
+        });
+      }
+      else {
+        return this.pokemons.filter(pokemon => {
+          return pokemon.attack > min;
+        });
+      }
     },
     sortedPokemons() {
       let { sort, direction } = this.sort;
