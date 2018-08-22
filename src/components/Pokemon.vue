@@ -1,9 +1,9 @@
 <template>
   <li>
     <h3>{{ pokemon.name }}</h3>
-    <p>size: {{ pokemon.size }}</p>
-    <p>type: {{ pokemon.type }}</p>
-    <p>rank: {{ pokemon.rank}}</p>
+    <p>pokemon: {{ pokemon.pokemon }}</p>
+    <p>special-attack: {{ pokemon.special_attack }}</p>
+    <p>base: {{ pokemon.pokebase }}</p>
   </li>
 </template>
 

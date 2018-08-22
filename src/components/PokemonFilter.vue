@@ -20,14 +20,14 @@
 </template>
 
 <script>
-import animalsApi from '../services/animalsApi';
+import pokemonsApi from '../services/pokemonsApi';
 export default {
   props: {
     onFilter: Function
   },
   data() {
     return {
-      sizes: animalsApi.getSizes(),
+      sizes: pokemonsApi.getSizes(),
       selected: ''
     };
   },
