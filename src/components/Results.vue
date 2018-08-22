@@ -30,17 +30,14 @@ export default {
       if(!type && !min) {
         return this.pokemons;
       }
-      // if no type selected, display only according to attack min
-      else if(!type){
-        return this.pokemons.filter(pokemon => {
-          return pokemon.attack > min;
-        });
-      }
-      // if both type and min are specified, filter according to both
+      // filter according to min and/or type if either specified
       else {
         return this.pokemons.filter(pokemon => {
-          return pokemon.attack >= min 
-          && (pokemon.type_1 === type || pokemon.type_2 === type);
+          return pokemon.attack >= (min || 0)
+          && (
+            !type || 
+            (pokemon.type_1 === type || pokemon.type_2 === type)
+          );
         });
       }
     },
