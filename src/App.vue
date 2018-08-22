@@ -41,12 +41,11 @@ export default {
   },
   computed: {
     filtered() {
-      const { type } = this.filter;
+      const { type, attack } = this.filter;
+      
       const typeFiltered = this.pokedex.slice().filter(pokemon => type === 'all' || pokemon.type_1 === type || pokemon.type_2 === type);
-
-
-      // we need to remove all in typeFiltered if they are below minimum attack
-      const attackFiltered = typeFiltered;
+      
+      const attackFiltered = typeFiltered.filter((pokemon) => pokemon.attack > attack);
 
       return attackFiltered;
     },

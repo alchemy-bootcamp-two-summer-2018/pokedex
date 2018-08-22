@@ -19,11 +19,8 @@
     </div>
 
     <div id="attack-filter">
-      <p>Filter by attack:</p>
-      <form>
-        <input placeholder="Min value">
-        <button>Filter</button>
-      </form>
+      <p>Minimum attack:</p>
+      <input v-model="filter.attack" placeholder="Enter min attack value">
     </div>
     
   </div>
@@ -32,13 +29,13 @@
 <script>
 export default {
   props: ['types', 'filter'],
-  methods: {
-    handleSubmit() {
-      const filter = {
+  // methods: {
+  //   handleSubmit() {
+  //     const filter = {
         
-      }
-    }
-  }
+  //     }
+  //   }
+  // }
 
 };
 </script>
