@@ -24,10 +24,14 @@ export default {
   name: 'app',
   data() {
     return {
+      pokedex: pokedex.getPokemon(),
       filter: {
         type: ''
       },
-      pokemons: pokedex.getPokemon()
+      sort: {
+        sort: 'pokemon',
+        direction: 1
+      }      
     };
   },
   components: {
