@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul>
-      <Tile v-for="tile in sorted"
+      <Tile v-for="tile in sortedList"
       v-bind:key="tile.id"
       v-bind:tile="tile"/>
     </ul>
@@ -13,7 +13,7 @@
 import Tile from './Tile.vue';
 export default {
   props: {
-    sorted: Array
+    sortedList: Array
   },
   components: {
     Tile
