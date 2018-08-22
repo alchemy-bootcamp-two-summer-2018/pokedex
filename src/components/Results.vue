@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="pokemon-list">
         <Pokemon v-for="pokemon in sortedPokedex"
           :key="pokemon.pokemon"
           :pokemon="pokemon"/>
@@ -50,7 +50,16 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 
+    div {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 2fr));
+        grid-gap: 20px;
+    }
+
+    .pokemon-list {
+        margin: 60px 20px;
+    }
 
 </style>

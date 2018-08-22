@@ -1,0 +1,26 @@
+* {margin: 0; padding:0; box-sizing: border-box;}
+
+.header {
+    width: 100vw;
+}
+
+body {
+    text-align: center;
+    font-family: 'Nunito Sans', sans-serif;
+    color: rgb(58, 75, 172);
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: 2px solid rgb(196, 249, 255);
+    background-color: rgba(196, 249, 255, 0.317);
+    color: rgb(3, 95, 148);
+
+}
+
+button:hover {
+    background-color: rgb(196, 249, 255);
+}

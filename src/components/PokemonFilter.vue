@@ -2,7 +2,6 @@
     <form v-on:submit.prevent="handleSubmit">
         <p>
             <label>
-                Type:
                 <select v-model="selected">
                     <option value="">All types</option>
                     <option v-for="type in types"
@@ -43,3 +42,12 @@ export default {
 };
 
 </script>
+
+<style scoped>
+
+  select {
+    color: rgb(3, 95, 148);
+    font-size: 1em;
+  }
+
+</style>

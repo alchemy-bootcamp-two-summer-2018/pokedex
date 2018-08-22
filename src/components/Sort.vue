@@ -37,6 +37,14 @@ export default {
 };
 </script>
 
-<style>
-
+<style scoped>
+  
+  input {
+    margin-left: 20px;
+    margin-right: 5px;
+  }
+  select {
+    color: rgb(3, 95, 148);
+    font-size: 1em;
+  }
 </style>

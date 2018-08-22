@@ -1,7 +1,10 @@
 <template>
     <div id="app">
       <header>
+        <img src="./assets/pokemon2.jpg" alt="pokemon header">
+        <h2>Filter by Type</h2>
         <PokemonFilter :onFilter="handleFilter"/>
+        <h2>Sort by Attack, Defense, or Pokemon</h2>
         <Sort :onSort="handleSort"/>
       </header>
       <main>
@@ -46,12 +49,14 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  h1 {
+    margin: 30px 20px 40px;
+  }
+  h2 {
+    margin: 40px 20px 20px;
+  }
+
+  img {
+    width: 100vw;
+  }
 </style>
