@@ -35,6 +35,7 @@ img {
 
 .tile:hover {
   opacity: 1.0;
+  box-shadow: 5px 5px rgb(139, 139, 0);
 }
 
 h2, p {
