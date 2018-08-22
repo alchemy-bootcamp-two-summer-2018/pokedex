@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <Pokemon v-for="pokemon in sortedPokemons"
+    <Tile v-for="pokemon in sortedPokemons"
       v-bind:key="pokemon.pokemon"
       v-bind:pokemon="pokemon"/>
   </ul>
@@ -8,7 +8,7 @@
 
 <script>
 import pokemonsApi from '../services/pokemonsApi_short';
-import Pokemon from './Pokemon.vue';
+import Tile from './Tile.vue';
 
 export default {
   props: {
@@ -22,18 +22,22 @@ export default {
   },
   computed: {
     filteredPokemons() {
+      console.log('truth', !type, '1', 'min', min, 'type', '!' + type + '!');
       const { type, min } = this.filter;
       if(!type && !min) {
+        console.log('1', 'min', min, 'type', type);
         return this.pokemons;
       }
-      else if(!min){
+      else if(!type){
+        console.log('truth', !type, '2', 'min', min, 'type', type);
         return this.pokemons.filter(pokemon => {
-          return pokemon.type_1 === type;
+          return pokemon.attack > min;
         });
       }
       else {
+        console.log('truth', !type, '3', 'min', min, 'type', type);
         return this.pokemons.filter(pokemon => {
-          return pokemon.attack > min;
+          return pokemon.attack >= min && pokemon.type_1 === type;
         });
       }
     },
@@ -50,7 +54,7 @@ export default {
     }
   },
   components: {
-    Pokemon
+    Tile
   }
 };
 </script>

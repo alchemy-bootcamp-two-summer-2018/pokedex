@@ -33,7 +33,7 @@ export default {
     return {
       types: pokemonsApi.getTypes(),
       selected: '',
-      minSelected: '',
+      minSelected: 0,
     };
   },
   methods: {
@@ -43,6 +43,7 @@ export default {
         min: this.minSelected
       };
       this.onFilter(filter);
+      console.log('in handle submit', filter.type, filter.min)
     }
   }
 };
