@@ -2,7 +2,7 @@
   <div id="sort">
     <p>Sort by:</p>
     <select v-model="sort.props">
-      <option value="id">Sort</option>
+      <option value="id">None</option>
       <option value="pokemon">Name</option>
       <option value="attack">Attack</option>
       <option value="defense">Defense</option>
