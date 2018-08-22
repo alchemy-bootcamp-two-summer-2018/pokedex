@@ -1,11 +1,11 @@
 <template>
     <div id="app">
       <header>
-        <Filter :onFilter="handleFilter"/>
+        <PokemonFilter :onFilter="handleFilter"/>
         <Sort :onSort="handleSort"/>
       </header>
       <main>
-          <Animals :filter="filter"
+          <Results :filter="filter"
             :sort="sort"/>
       </main>
     </div>
@@ -13,8 +13,8 @@
 
 <script>
 import Results from './components/Results.vue';
-import Filter from './components/Filter.vue';
-import Sort from '.components/Sort';
+import PokemonFilter from './components/PokemonFilter.vue';
+import Sort from './components/Sort';
 
 export default {
   name: 'app',
@@ -31,7 +31,7 @@ export default {
   },
   components: {
     Results,
-    Filter,
+    PokemonFilter,
     Sort
   },
   methods: {

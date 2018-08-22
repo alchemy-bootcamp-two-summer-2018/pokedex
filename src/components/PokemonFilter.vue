@@ -2,7 +2,7 @@
     <form v-on:submit.prevent="handleSubmit">
         <p>
             <label>
-                Size:
+                Type:
                 <select v-model="selected">
                     <option value="">All types</option>
                     <option v-for="type in types"
@@ -35,7 +35,7 @@ export default {
   methods: {
     handleSubmit() {
       const filter = {
-        size: this.selected
+        type: this.selected
       };
       this.onFilter(filter);
     }
