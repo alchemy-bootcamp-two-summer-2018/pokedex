@@ -8,13 +8,15 @@
 
 <script>
 import pokedex from "../pokedex.js";
-
 import Pokemon from "./Pokemon.vue";
 export default {
     data() {
         return {
             pokemon: pokedex,
-            type_1: pokedex
+            type_1: pokedex,
+            attack: pokedex,
+            defense: pokedex,
+            url_image: pokedex
         };
     },
     components: {
@@ -27,7 +29,7 @@ export default {
 <style>
     ul {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+        grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
         grid-gap: 5px;
     }
 

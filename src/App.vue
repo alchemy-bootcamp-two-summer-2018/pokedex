@@ -1,17 +1,38 @@
 <template>
   <div id="app">
-    <Pokemons/>
+    <header>
+      <PokemonFilter v-bind:onFilter="handleFilter"/>
+      <!-- <PokemonSort/> -->
+    </header>
+    <Pokemons v-bind:filter="filter"/>
+
   </div>
 </template>
 
 <script>
 
 import Pokemons from './components/Pokemons.vue';
+import PokemonFilter from './components/PokemonFilter.vue'
+
 
 export default {
   name: 'app',
+  data() {
+    return {
+      filter: {
+        type: ""
+      }
+    }
+  },
   components: {
-    Pokemons
+    Pokemons,
+    PokemonFilter
+    // PokemonSort
+  }, 
+  methods: {
+    handleFilter(filter) {
+      this.filter = filter;
+    }
   }
 }
 </script>
