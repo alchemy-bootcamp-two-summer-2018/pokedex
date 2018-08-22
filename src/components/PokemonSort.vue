@@ -5,7 +5,8 @@
       <option value="pokemon">Pokemon</option>
       <option value="attack">Attack</option>
       <option value="defense">defense</option>
-      <option value="type_1">Type</option>
+      <option value="type_1">Type 1</option>
+      <option value="type_2">Type 2</option>
 
     </select>
     <label>

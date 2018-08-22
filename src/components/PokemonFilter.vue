@@ -2,17 +2,22 @@
   <form v-on:submit.prevent="handleSubmit">
     <p>
       <label>
-        Filter by attack:
-        <select v-model="selected">
-          <option value="">All attacks</option>
-          <option v-for="attack in attacks"
-            v-bind:key="attack"
-            v-bind:value="attack">
-            {{ attack }}
-          </option>
-        </select>
-      </label>
-    </p>
+        Filter by Type:
+     </label>
+    <select v-model="selected">
+        <option value="">All types</option>
+        <option v-for="type in types"
+        v-bind:key="type"
+        v-bind:value="type">
+        {{ type }}
+        </option>
+    </select>
+    <p> </p>
+    <label>
+        Filter by Minimum Attack:
+    </label>
+    <input v-model="minimum" placeholder="Minimum Attack">
+    <p>Minimum attack: {{ minimum }}</p>
     <p>
       <button>Apply</button>
     </p>
@@ -27,14 +32,15 @@ export default {
   },
   data() {
     return {
-      attacks: pokemonsApi.getAttacks(),
-      selected: ''
+      types: pokemonsApi.getTypes(),
+      selected: '',
+      minSelected: '',
     };
   },
   methods: {
     handleSubmit() {
       const filter = {
-        attack: this.selected
+        type: this.selected
       };
       this.onFilter(filter);
     }

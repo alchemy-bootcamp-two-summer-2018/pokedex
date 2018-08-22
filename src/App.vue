@@ -4,7 +4,6 @@
       <PokemonFilter v-bind:onFilter="handleFilter"/>
       <PokemonSort v-bind:onSort="handleSort"/>
     </header>
-    <!-- <Header /> -->
     <main>
       <Pokemons v-bind:filter="filter"
         v-bind:sort="sort"/>
@@ -16,14 +15,13 @@
 import Pokemons from './components/Pokemons.vue';
 import PokemonFilter from './components/PokemonFilter.vue';
 import PokemonSort from './components/PokemonSort.vue';
-import Header from './components/Header.vue';
 
 export default {
   name: 'app',
   data() {
     return {
       filter: {
-        attack: ''
+        type: ''
       },
       sort: {
         sort: 'pokemon',
@@ -32,10 +30,9 @@ export default {
     };
   },
   components: {
-    // Header,
-    Pokemons,
     PokemonFilter,
     PokemonSort,
+    Pokemons,
 
   },
   methods: {
