@@ -1,16 +1,19 @@
 <template>
   <header>
-
+   <PokeFilter/>
+   <Sort/>
   </header>
 </template>
 
 <script>
-import Filter from './Filter.vue';
+import PokeFilter from './PokeFilter.vue';
 import Sort from './Sort.vue';
+
 export default {
-  componenets: {
-    Filter,
-    Sort,
+  name: 'Header',
+  components: {
+    PokeFilter,
+    Sort
   }
 
 };

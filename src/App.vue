@@ -1,12 +1,14 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <Results v-bind:pokemon="pokemon"/>
+    <Header/>
+    <Results v-bind:sort="sort"/>
   </div>
 </template>
 
 <script>
 import pokemon from '../pokedex.js';
+import Header from './components/Header.vue';
 import Results from './components/Results.vue';
 
 export default {
@@ -17,7 +19,17 @@ export default {
     };
   },
   components: {
+    Header,
     Results
+  },
+  computed: {
+    filtered() {
+      return this.pokemon;
+    },
+
+    sort() {
+      return this.filtered;
+    }
   }
 };
 </script>
