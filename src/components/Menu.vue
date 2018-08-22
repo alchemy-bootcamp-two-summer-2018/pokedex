@@ -1,8 +1,13 @@
 <template>
   <section>
     <h2>Options:</h2>
-    <PokeFilter/>
-    <Sort/>
+    <PokeFilter 
+      v-bind:filter="filter"
+      v-bind:types="types"
+    />
+    <Sort
+    
+    />
   </section>
 </template>
 
@@ -11,9 +16,10 @@ import PokeFilter from './PokeFilter.vue';
 import Sort from './Sort.vue';
 
 export default {
+  props: ['types', 'filter', 'sort'],
   components: {
     PokeFilter, Sort
-  }
+  },
 };
 </script>
 
