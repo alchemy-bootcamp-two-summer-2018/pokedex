@@ -1,5 +1,5 @@
 <template>
-    <div class="results">
+    <div class="">
         <Pokemon v-for="pokemon in pokedex"
         v-bind:key="pokemon.name"
         v-bind:pokemon="pokemon"/>

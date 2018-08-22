@@ -25633,8 +25633,23 @@ const pokedex = [
   }
 ];
 
+const allType1 = pokedex.map(pokemon => {
+  return pokemon.type_1;
+});
+
+const seen = {};
+
+const types = allType1.filter(type => {
+  if(seen[type]) return false;
+  seen[type] = true;
+  return true;
+});
+
 export default {
   getPokedex() {
     return pokedex;
+  },
+  getTypes() {
+    return types;
   }
 };
