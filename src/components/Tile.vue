@@ -2,7 +2,10 @@
   <div class="tile">
     <h2>{{ pokemon.pokemon.toUpperCase() }}</h2>
     <div class="stats">
-      <p>Type: {{ pokemon.type_1.toUpperCase() }}</p>
+      <p>Types: 
+        {{ pokemon.type_1.toUpperCase() }}, 
+        {{ pokemon.type_2.toUpperCase() }}
+      </p>
       <p>Attack: {{ pokemon.attack }}</p>
       <p>Defense: {{ pokemon.defense }}</p>
     </div>
