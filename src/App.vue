@@ -7,7 +7,7 @@
       v-bind:sort="sort"
     />
     <Results 
-      v-bind:list="list"
+      v-bind:sorted="sorted"
     />
     <Footer/>
   </div>
@@ -40,12 +40,18 @@ export default {
   computed: {
     filtered() {
       const { type } = this.filter;
+      console.log('filtered', this.pokedex.slice().filter(pokemon => type === 'all' || pokemon.type_1 === type || pokemon.type_2 === type));
       return this.pokedex.slice().filter(pokemon => type === 'all' || pokemon.type_1 === type || pokemon.type_2 === type);
-
     },
-    list() {
-      
-      return this.filtered;
+    sorted() {
+      const { props } = this.sort;
+      return this.filtered.slice().sort((a, b) => {
+        const propA = a[props];
+        const propB = b[props];
+        if(propA > propB) return 1;
+        if(propA < propB) return -1;
+        return 0;
+      });
     },
     types() {
       const type1 = this.pokedex.map(pokemon => pokemon.type_1);

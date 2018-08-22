@@ -2,7 +2,7 @@
   <section>
     <div id="pokemon-list">
       <Tile
-        v-for="pokemon in list"
+        v-for="pokemon in sorted"
         v-bind:key="pokemon.pokemon"
         v-bind:pokemon="pokemon"
       />
@@ -14,7 +14,7 @@
 import Tile from './Tile.vue';
 
 export default {
-  props: ['list'],
+  props: ['sorted'],
   components: {
     Tile
   }
