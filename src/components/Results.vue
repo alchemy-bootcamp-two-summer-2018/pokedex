@@ -26,7 +26,9 @@ export default {
       if(!type) return this.pokedex;
 
       return this.pokedex.filter(pokemon => {
-        return pokemon.type === type;
+        if(pokemon.type_1 === type || pokemon.type_2 === type) {
+          return pokemon;
+        }
       });
     },
     sortedPokedex() {
