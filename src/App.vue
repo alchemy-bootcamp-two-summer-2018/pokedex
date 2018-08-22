@@ -1,8 +1,13 @@
 <template>
   <div id="app">
     <Header/>
-    <Menu/>
-    <Results v-bind:list="list"/>
+    <Menu 
+      v-bind:filter="filter"
+      v-bind:types="types"
+    />
+    <Results 
+      v-bind:list="list"
+    />
     <Footer/>
   </div>
 </template>
@@ -31,13 +36,20 @@ export default {
   computed: {
     filtered() {
       const { type } = this.filter;
-      return this.pokedex.slice().filter( (p) => p.type_1 === 'fire');
+      return this.pokedex.slice().filter(pokemon => type === 'all' || pokemon.type_1 === type || pokemon.type_2 === type);
 
     },
     list() {
       
       return this.filtered;
+    },
+    types() {
+      const type1 = this.pokedex.map(pokemon => pokemon.type_1);
+      const type2 = this.pokedex.map(pokemon => pokemon.type_2);
+      const allTypes = new Set(type1.concat(type2));
+      return [...allTypes.values()];
     }
+
   }
 };
 </script>
