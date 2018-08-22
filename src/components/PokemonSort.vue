@@ -17,23 +17,23 @@
 
 <script>
 export default {
-    props: {
-        onSort:Function
-    },
-    data() {
-        return {
-            sort: 'name',
-            direction: 1
-        };
-    },
-    methods: {
-        handleSubmit() {
-            this.onSort({
-                
-            })
-        }
+  props: {
+    onSort:Function
+  },
+  data() {
+    return {
+      sort: 'name',
+      direction: 1
+    };
+  },
+  methods: {
+    handleSubmit() {
+      this.onSort({
+
+      });
     }
-}
+  }
+};
 </script>
 
 <style>

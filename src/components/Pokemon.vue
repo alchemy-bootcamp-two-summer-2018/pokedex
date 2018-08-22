@@ -1,9 +1,10 @@
 <template>
   <li>
-    <h3>{{ pokemon.name }}</h3>
-    <p>pokemon: {{ pokemon.pokemon }}</p>
+    <h3>{{ pokemon.pokemon }}</h3>
+    <img class="images" v-bind:src="pokemon.url_image">
     <p>special-attack: {{ pokemon.special_attack }}</p>
-    <p>base: {{ pokemon.pokebase }}</p>
+    <p>pokebase: {{ pokemon.pokebase }}</p>
+    <p>speed: {{ pokemon.speed }}</p>
   </li>
 </template>
 
@@ -20,5 +21,8 @@ li {
   list-style: none;
   text-align: center;
   border: 1px solid #aaa;
+}
+.images {
+  width:100px;
 }
 </style>

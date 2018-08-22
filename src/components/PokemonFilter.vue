@@ -18,7 +18,6 @@
     </p>
   </form>
 </template>
-
 <script>
 import pokemonsApi from '../services/pokemonsApi';
 export default {
