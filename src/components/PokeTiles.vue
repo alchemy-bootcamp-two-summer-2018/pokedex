@@ -19,10 +19,15 @@ export default {
 </script>
 
 <style>
+
 li {
     list-style: none;
     text-align: center;
     border: 1px solid black;
+}
+
+img {
+    max-width: 250px;
 }
 
 </style>
