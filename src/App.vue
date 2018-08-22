@@ -35,8 +35,10 @@ export default {
   },
   computed: {
     filtered() {
-      const { type } = this.filter;
-      return this.pokedex.slice().filter(p => type === 'all' || p.type_1 === type || p.type_2 === type);
+      const { type, attack } = this.filter;
+      const typeFiltered = this.pokedex.slice().filter(p => type === 'all' || p.type_1 === type || p.type_2 === type);
+      const attackFiltered = typeFiltered.filter(pokemon => pokemon.attack > attack);
+      return attackFiltered;
     },
 
     sortedList() {

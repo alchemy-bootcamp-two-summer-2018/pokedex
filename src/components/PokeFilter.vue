@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="filter">
     <div>
       <label>
         Filter by Type:
@@ -12,9 +12,8 @@
     <div>
       <label>
         Filter by Attack:
-        <form>
-          <input placeholder="min value"/>
-          <button>Filter</button>
+        <form >
+          <input v-model="filter.attack" placeholder="min value"/>
         </form>
       </label>
     </div>
@@ -33,5 +32,10 @@ export default {
 </script>
 
 <style>
+
+.filter {
+  display: inline;
+}
+
 
 </style>
