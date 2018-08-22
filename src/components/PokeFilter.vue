@@ -52,6 +52,7 @@ export default {
 
 p, select, div.filters {
   display: inline;
+  margin: 0px 5px;
 }
 
 form {

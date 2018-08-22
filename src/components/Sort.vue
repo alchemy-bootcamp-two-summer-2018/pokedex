@@ -25,6 +25,7 @@ export default {
 
 p, select {
   display: inline;
+  margin: 0px 5px;
 }
 
 </style>
