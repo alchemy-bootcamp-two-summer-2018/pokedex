@@ -1,13 +1,13 @@
 <template>
     <li>
-      <!-- <div id="img" v-bind:style="{ backgroundImage: 'url(' + tile.url_image +')'}"> -->
+      <div id="img" v-bind:style="{ backgroundImage: 'url(' + tile.url_image +')'}">
         <h3> {{ tile.pokemon }} </h3>
-        <!-- <div class="stats"> -->
+        <div class="stats">
           <p>Type: {{ tile.type_1 }}</p>
           <p>Attack: {{ tile.attack}}</p>
           <p>Defense: {{ tile.defense}}</p>
-        <!-- </div> -->
-      <!-- </div> -->
+        </div>
+      </div>
     </li>
 </template>
 
