@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import pokemon from '../pokedex.js';
+import pokedex from '../pokedex.js';
 import Header from './components/Header.vue';
 import Results from './components/Results.vue';
 
@@ -15,7 +15,7 @@ export default {
   name: 'app',
   data(){
     return {
-      pokemon,
+      pokedex,
       filter: {
         type: 'all'
       }
@@ -28,7 +28,7 @@ export default {
   computed: {
     filtered() {
       const { type } = this.filter;
-      return this.pokemon.slice().filter(p => type === 'all' || p.type_1 === type || p.type_2 === type);
+      return this.pokedex.slice().filter(p => type === 'all' || p.type_1 === type || p.type_2 === type);
     },
 
     list() {
@@ -36,8 +36,8 @@ export default {
     },
 
     types() {
-      const typeOne = pokemon.map(p => p.type_1);
-      const typeTwo = pokemon.map(p => p.type_2);
+      const typeOne = pokedex.map(pokemon => pokemon.type_1);
+      const typeTwo = pokedex.map(pokemon => pokemon.type_2);
       const allTypes = new Set (typeOne.concat(typeTwo));
 
       return [...allTypes.values()];
