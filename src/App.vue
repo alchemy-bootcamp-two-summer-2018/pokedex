@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <Header/>
-    <Results v-bind:sort="sort"/>
+    <Header v-bind:types="types" v-bind:filter="filter"/>
+    <Results v-bind:list="list"/>
   </div>
 </template>
 
@@ -15,7 +15,10 @@ export default {
   name: 'app',
   data(){
     return {
-      pokemon
+      pokemon,
+      filter: {
+        type: 'all'
+      }
     };
   },
   components: {
@@ -24,11 +27,20 @@ export default {
   },
   computed: {
     filtered() {
-      return this.pokemon;
+      const { type } = this.filter;
+      return this.pokemon.slice().filter(p => type === 'all' || p.type_1 === type || p.type_2 === type);
     },
 
-    sort() {
+    list() {
       return this.filtered;
+    },
+
+    types() {
+      const typeOne = pokemon.map(p => p.type_1);
+      const typeTwo = pokemon.map(p => p.type_2);
+      const allTypes = new Set (typeOne.concat(typeTwo));
+
+      return [...allTypes.values()];
     }
   }
 };

@@ -1,6 +1,6 @@
 <template>
   <header>
-   <PokeFilter/>
+   <PokeFilter v-bind:filter="filter" v-bind:types="types"/>
    <Sort/>
   </header>
 </template>
@@ -11,6 +11,8 @@ import Sort from './Sort.vue';
 
 export default {
   name: 'Header',
+  props: 
+    ['types', 'filter', 'sort'],
   components: {
     PokeFilter,
     Sort
