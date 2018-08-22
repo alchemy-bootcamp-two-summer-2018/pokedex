@@ -1,6 +1,6 @@
 <template>
     <ul>
-        <Pokemon v-for="pokemon in filteredPokemons"
+        <Pokemon v-for="pokemon in sortedPokemons"
             v-bind:key="pokemon.pokemon" 
             v-bind:pokemon="pokemon"/>
     </ul>
@@ -12,7 +12,8 @@ import type from "./type.js";
 import Pokemon from "./Pokemon.vue";
 export default {
     props: {
-        filter: Object
+        filter: Object, 
+        sort: Object
     },
     data() {
         return {
@@ -26,12 +27,25 @@ export default {
     },
     computed: {
         filteredPokemons() {
-            console.log("hi")
             const { type } = this.filter;
             if (!type) return this.pokemons;
 
             return this.pokemons.filter(pokemon => {
                 return pokemon.type_1 === type;
+            });
+        },
+        sortedPokemons() {
+            
+            let { sort, direction } = this.sort;
+            console.log(sort)
+            if(!sort) {
+                sort = 'name';
+            }
+
+            return this.filteredPokemons.slice().sort((a, b) => {
+                if(a[sort] > b[sort]) return 1 * direction;
+                if(b[sort] > a[sort]) return -1 * direction;
+                if(b[sort] === a[sort]) return 0;
             });
         }
     },

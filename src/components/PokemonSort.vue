@@ -17,8 +17,24 @@
 
 <script>
 export default {
-    
-}
+    props: {
+        onSort: Function
+    },
+    data() {
+        return {
+            sort: 'pokemon',
+            direction: 1
+        }
+    },
+    methods: {
+        handleSubmit() {
+            this.onSort({
+                sort: this.sort,
+                direction: this.direction
+            });
+        }
+    }
+};
 </script>
 
 <style>
