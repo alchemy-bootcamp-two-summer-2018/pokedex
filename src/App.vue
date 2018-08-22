@@ -5,8 +5,7 @@
       v-bind:filter="filter"
       v-bind:types="types"
       v-bind:sort="sort"
-      v-bind:onAttackFilter="handleAttackFilter"
-    />
+S    />
     <Results 
       v-bind:sorted="sorted"
     />
@@ -29,7 +28,8 @@ export default {
       pokedex,
       filter: {
         type: 'all',
-        attack: ''
+        attack: '',
+        defense: ''
       },
       sort: {
         props: 'id'
@@ -41,13 +41,11 @@ export default {
   },
   computed: {
     filtered() {
-      const { type, attack } = this.filter;
-      
+      const { type, attack, defense } = this.filter;
       const typeFiltered = this.pokedex.slice().filter(pokemon => type === 'all' || pokemon.type_1 === type || pokemon.type_2 === type);
-      
-      const attackFiltered = typeFiltered.filter((pokemon) => pokemon.attack > attack);
-
-      return attackFiltered;
+      const attackFiltered = typeFiltered.filter(pokemon => pokemon.attack > attack);
+      const defenseFiltered = attackFiltered.filter(pokemon => pokemon.defense > defense);
+      return defenseFiltered;
     },
     sorted() {
       const { props } = this.sort;
@@ -65,11 +63,6 @@ export default {
       const allTypes = new Set(type1.concat(type2));
       return [...allTypes.values()];
     },
-    methods: {
-      handleAttackFilter(attackFilter) {
-        this.attackFilter = attackFilter;
-      }
-    }
   }
 };
 </script>
