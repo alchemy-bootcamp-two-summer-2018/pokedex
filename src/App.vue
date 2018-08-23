@@ -12,7 +12,7 @@
 </template>
 
 <script>
-
+import pokedex from './pokedex.js'
 import Pokemons from './components/Pokemons.vue';
 import PokemonFilter from './components/PokemonFilter.vue';
 import PokemonSort from './components/PokemonSort.vue'
@@ -25,7 +25,7 @@ export default {
         type: ''
       },
       sort: {
-        sort: 'attack',
+        sort: 'pokemon',
         direction: 1
       }
     };

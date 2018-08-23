@@ -37,7 +37,7 @@ export default {
         sortedPokemons() {
             
             let { sort, direction } = this.sort;
-            console.log(sort)
+         
             if(!sort) {
                 sort = 'name';
             }

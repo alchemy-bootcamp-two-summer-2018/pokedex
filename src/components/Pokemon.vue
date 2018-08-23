@@ -1,6 +1,6 @@
 <template>
     <li>
-        <img v-bind:src="pokemon.url_image"/>
+        <!-- <img v-bind:src="pokemon.url_image"/> -->
         <h3>Name: {{ pokemon.pokemon }} </h3>
         <h3>Type 1: {{ pokemon.type_1 }} </h3>
         <h3>Attack: {{ pokemon.attack }} </h3>
