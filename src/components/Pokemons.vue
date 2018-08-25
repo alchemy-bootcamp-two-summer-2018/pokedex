@@ -1,45 +1,47 @@
 <template>
     <ul>
         <Pokemon v-for="pokemon in sortedPokemons"
-            v-bind:key="pokemon.pokemon" 
-            v-bind:pokemon="pokemon"/>
+            :key="pokemon.pokemon"
+            :pokemon="pokemon"
+        />
     </ul>
 </template>
 
 <script>
-import pokedex from "../pokedex.js";
-import type from "./type.js";
-import Pokemon from "./Pokemon.vue";
+import data from './data.js'
+import pokedex from '../pokedex.js';
+import Pokemon from './Pokemon.vue';
+
 export default {
     props: {
-        filter: Object, 
+        filter: Object,
         sort: Object
     },
     data() {
         return {
             pokemons: pokedex,
-            type_1: pokedex,
-            attack: pokedex,
-            defense: pokedex,
-            url_image: pokedex,
-            types: type.getPokemons(),
-        };
+        }
     },
-    computed: {
+    components: {
+        Pokemon,
+    },
+    computed:{
+        
         filteredPokemons() {
-            const { type } = this.filter;
-            if (!type) return this.pokemons;
+            const { type, attack } = this.filter;
+            if (!type && (attack || 0) <=0) return this.pokemons;
 
             return this.pokemons.filter(pokemon => {
-                return pokemon.type_1 === type;
+                return (
+                    (!type || pokemon.type_1 === type) &&
+                    (!attack || pokemon.attack > attack)
+                );                    ;
             });
         },
         sortedPokemons() {
-            
             let { sort, direction } = this.sort;
-         
-            if(!sort) {
-                sort = 'name';
+            if (!sort) {
+                sort = 'pokemon'
             }
 
             return this.filteredPokemons.slice().sort((a, b) => {
@@ -48,19 +50,14 @@ export default {
                 if(b[sort] === a[sort]) return 0;
             });
         }
-    },
-    components: {
-        Pokemon
     }
-
 }
 </script>
 
 <style>
-    ul {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-        grid-gap: 5px;
-    }
-
+ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 5px;
+}
 </style>

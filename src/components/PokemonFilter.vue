@@ -1,52 +1,48 @@
 <template>
-    <form v-on:submit.prevent="handleSubmit">
-        <p>
-            <label>
-                Type 1:
-                <select v-model="selected">
-                    <option value="">All Types</option>
-                    <option v-for="type in types"
-                        v-bind:key="type"
-                        v-bind:value="type">
-                        {{ type }}
-                    </option>
-                </select>
-            </label>
-        </p>
-        <p>
-            <button>Apply</button>
-        </p>
-    </form>
+    <p>
+        <label>
+            <select v-model="selected" v-on:change="handleChange">
+                <option value="">All Pokemon</option>
+                <option v-for="type in types"
+                    v-bind:key="type"
+                    v-bind:value="type"
+                >
+                    {{ type }}
+                </option>
+            </select>
+        </label>
+        <label>Minimum Attack:
+            <input v-model.number="attack" type="number" v-on:keyup="handleChange">
+        </label>
+    </p>
 </template>
 
 <script>
-// import pokedex from "../pokedex.js";
-import type from "./type.js";
-import Pokemon from './Pokemon.vue';
+import pokedex from '../pokedex.js';
+import data from './data.js'
 
 export default {
     props: {
         onFilter: Function
     },
-    data(){
+    data() {
         return {
-            types: type.getTypes(),
-            selected: ''
-        };
-    },
-    methods: {
-        handleSubmit() {
-            const filter = {
-                type: this.selected
-            };
-            this.onFilter(filter);
+            types: data.getTypes(),
+            selected:'',
+            attack:'',
         }
     },
-    components: {
-        Pokemon
+    methods: {
+        handleChange() {
+            const filter = {
+                type: this.selected,
+                attack: this.attack
+            };
+            this.onFilter(filter);
+            // console.log("hi", selected)
+        }
     }
-};
-
+}
 </script>
 
 <style>
