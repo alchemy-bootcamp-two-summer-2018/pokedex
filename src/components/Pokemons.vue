@@ -1,66 +1,45 @@
 <template>
     <ul>
-        <Pokemon v-for="pokemon in sortedPokemons"
-            v-bind:key="pokemon.pokemon" 
-            v-bind:pokemon="pokemon"/>
+        <Pokemon v-for="pokemon in pokemons"
+            :key="pokemon.pokemon"
+            :pokemon="pokemon"
+        />
     </ul>
 </template>
 
 <script>
-import pokedex from "../pokedex.js";
-import type from "./type.js";
-import Pokemon from "./Pokemon.vue";
+import pokedex from '../pokedex.js';
+import Pokemon from './Pokemon.vue';
+
 export default {
     props: {
-        filter: Object, 
-        sort: Object
+        filter: Object,
     },
     data() {
         return {
             pokemons: pokedex,
-            type_1: pokedex,
-            attack: pokedex,
-            defense: pokedex,
-            url_image: pokedex,
-            types: type.getPokemons(),
-        };
+        }
     },
-    computed: {
+    components: {
+        Pokemon,
+    },
+    computed:{
         filteredPokemons() {
             const { type } = this.filter;
             if (!type) return this.pokemons;
 
-            return this.pokemons.filter(pokemon => {
+            return this.pokemons.filter(pokemeon => {
                 return pokemon.type_1 === type;
             });
         },
-        sortedPokemons() {
-            
-            let { sort, direction } = this.sort;
-         
-            if(!sort) {
-                sort = 'name';
-            }
-
-            return this.filteredPokemons.slice().sort((a, b) => {
-                if(a[sort] > b[sort]) return 1 * direction;
-                if(b[sort] > a[sort]) return -1 * direction;
-                if(b[sort] === a[sort]) return 0;
-            });
-        }
-    },
-    components: {
-        Pokemon
     }
-
 }
 </script>
 
 <style>
-    ul {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-        grid-gap: 5px;
-    }
-
+ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 5px;
+}
 </style>
