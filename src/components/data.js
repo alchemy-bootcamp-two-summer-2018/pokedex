@@ -9,8 +9,11 @@ const allTypes = pokemons.map(pokemon => {
 const seen = {};
 
 const types = allTypes.filter(type => {
-    if(seen[type]) return false;
-    seen[type] = true;
+    if(seen[type]) {
+        return false
+    } else {
+        seen[type] = true;
+    };
     return true;
 })
 
@@ -19,7 +22,7 @@ export default {
     getTypes() {
         return types;
     },
-    getPokemons() {
-        return pokemons;
-    }
+    // getPokemons() {
+    //     return pokemons;
+    // }
 }
