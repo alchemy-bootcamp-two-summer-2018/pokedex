@@ -2,7 +2,10 @@
   <div id="app">
     <header>
       <PokemonFilter v-bind:onFilter="handleFilter"/>
-      <Pokemons v-bind:filter="filter"/>
+      <PokemonSort v-bind:onSort="handleSort"/>
+      <Pokemons v-bind:filter="filter"
+        v-bind:sort="sort"
+      />
     </header>
   </div>
 </template>
@@ -11,6 +14,7 @@
 
 import Pokemons from './components/Pokemons.vue';
 import PokemonFilter from './components/PokemonFilter.vue';
+import PokemonSort from './components/PokemonSort.vue'
 
 export default {
   name: 'app',
@@ -18,16 +22,24 @@ export default {
     return {
       filter: {
         type: ''
+      },
+      sort: {
+        sort: 'pokemon',
+        direction: 1
       }
     }
   },
   components: {
     Pokemons,
-    PokemonFilter
+    PokemonFilter,
+    PokemonSort
   },
   methods: {
     handleFilter(filter) {
       this.filter = filter;
+    },
+    handleSort(sort) {
+      this.sort = sort;
     }
   }
 }
