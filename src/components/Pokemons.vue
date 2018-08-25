@@ -28,11 +28,14 @@ export default {
     computed:{
         
         filteredPokemons() {
-            const { type } = this.filter;
-            if (!type) return this.pokemons;
+            const { type, attack } = this.filter;
+            if (!type && (attack || 0) <=0) return this.pokemons;
 
             return this.pokemons.filter(pokemon => {
-                return pokemon.type_1 === type;
+                return (
+                    (!type || pokemon.type_1 === type) &&
+                    (!attack || pokemon.attack > attack)
+                );                    ;
             });
         },
         sortedPokemons() {

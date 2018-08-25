@@ -11,6 +11,9 @@
                 </option>
             </select>
         </label>
+        <label>Minimum Attack:
+            <input v-model.number="attack" type="number" v-on:keyup="handleChange">
+        </label>
     </p>
 </template>
 
@@ -26,12 +29,14 @@ export default {
         return {
             types: data.getTypes(),
             selected:'',
+            attack:'',
         }
     },
     methods: {
         handleChange() {
             const filter = {
-                type: this.selected
+                type: this.selected,
+                attack: this.attack
             };
             this.onFilter(filter);
             // console.log("hi", selected)

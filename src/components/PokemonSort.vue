@@ -1,13 +1,15 @@
 <template>
     <section>
+        <p>
+            Sort:
+        </p>
         <select v-model="sort" v-on:change="handleChange">
-        <option value="pokemon">Name</option>
-        <option value="type_1">Type</option>
-        <option value="attack">Attack</option>
-        <option value="defense">Defense</option>
-        
+            <option value="pokemon">Name</option>
+            <option value="type_1">Type</option>
+            <option value="attack">Attack</option>
+            <option value="defense">Defense</option>
         </select>
-        <label>
+        <label> 
         <input type="radio" value="1" 
             name="direction" v-model="direction"
             v-on:change="handleChange"> Ascending
