@@ -12,7 +12,6 @@
 export default {
     props: {
         pokemon: Object,
-        // selected: Object,
     }
 }
 </script>
