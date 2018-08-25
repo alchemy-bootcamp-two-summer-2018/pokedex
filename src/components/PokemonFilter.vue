@@ -34,9 +34,9 @@ export default {
                 type: this.selected
             };
             this.onFilter(filter);
+            // console.log("hi", selected)
         }
     }
-    
 }
 </script>
 
