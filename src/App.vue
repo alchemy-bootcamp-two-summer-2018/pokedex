@@ -2,20 +2,15 @@
   <div id="app">
     <header>
       <PokemonFilter v-bind:onFilter="handleFilter"/>
-      <PokemonSort v-bind:onSort="handleSort"/>
+      <Pokemons v-bind:filter="filter"/>
     </header>
-    <main>
-      <Pokemons v-bind:filter="filter"
-      v-bind:sort="sort"/>
-    </main>
   </div>
 </template>
 
 <script>
-import pokedex from './pokedex.js'
+
 import Pokemons from './components/Pokemons.vue';
 import PokemonFilter from './components/PokemonFilter.vue';
-import PokemonSort from './components/PokemonSort.vue'
 
 export default {
   name: 'app',
@@ -23,28 +18,19 @@ export default {
     return {
       filter: {
         type: ''
-      },
-      sort: {
-        sort: 'pokemon',
-        direction: 1
       }
-    };
+    }
   },
   components: {
     Pokemons,
-    PokemonFilter,
-    PokemonSort
-  }, 
+    PokemonFilter
+  },
   methods: {
     handleFilter(filter) {
       this.filter = filter;
-    },
-    handleSort(sort) {
-      console.log(sort)
-      this.sort = sort;
     }
   }
-};
+}
 </script>
 
 <style>
