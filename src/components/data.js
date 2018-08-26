@@ -13,16 +13,12 @@ const types = allTypes.filter(type => {
         return false
     } else {
         seen[type] = true;
-    };
+    }
     return true;
 })
-
 
 export default {
     getTypes() {
         return types;
     },
-    // getPokemons() {
-    //     return pokemons;
-    // }
 }
