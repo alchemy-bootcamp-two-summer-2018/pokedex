@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import pokemonData from '/Users/KaylaRose/dev/bootcamp2/pokedex/pokedex.js';
+import pokemonData from '../../pokedex.js';
 
 export default {
   props:{ 

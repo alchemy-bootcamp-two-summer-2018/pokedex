@@ -3,7 +3,7 @@
   <header>
   <div class="title">
     <h1> POKEMON DICTONARY </h1>
-    <p> filter and sort your favorit pokemon </p>
+    <p> filter and sort your favorite pokemon </p>
   </div>
     <PokemonFilter v-bind:onFilter="handleFilter"/>
     <Sort v-bind:onSort="handleSort"/>
