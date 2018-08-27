@@ -1,56 +1,49 @@
 <template>
-        <ul class="ul">
-            <PokemonCard v-for="pokemon in pokemonSorted"
-            v-bind:key="pokemon.id"
-            v-bind:pokemonList="pokemon"/>
-        </ul>
+  <ul class="ul">
+      <PokemonCard v-for="pokemon in pokemonSorted"
+      v-bind:key="pokemon.pokemon"
+      v-bind:pokemon="pokemon"/>
+  </ul>
 </template>
 
 <script>
+import pokemonData from '/Users/KaylaRose/dev/bootcamp2/pokedex/pokedex.js';
 import PokemonCard from './PokemonCard.vue';
 
 export default {
-
-    props:{
-        sort: Object,
-        pokemonList: Array
+  props:{
+    filter: Object,
+    sort: Object,
+  },
+  data() {
+    return {
+      pokemons: pokemonData.getPokemon()
+    };
+  },
+  computed:{
+    pokemonFiltered() {
+      const { type } = this.filter;
+      if(!type) return this.pokemons;
+      return this.pokemons.filter(pokemon => {
+        return pokemon.type_1 === type;
+      });
     },
-
-    computed:{
-    
-    pokemonFilter(){
-        return this.pokemonList;
-    },
-
     pokemonSorted() {
       let { sort, direction } = this.sort;
       if(!sort) {
-        sort = 'name';
+        sort = 'pokemon';
       }
-      return this.pokemonFilter.slice().sort((a, b) => {
+      return this.pokemonFiltered.slice().sort((a, b) => {
         if(a[sort] > b[sort]) return 1 * direction;
         if(b[sort] > a[sort]) return -1 * direction;
         if(b[sort] === a[sort]) return 0;
-        });
-        }
-    },
-
-    components:{
-            PokemonCard
-        }
-}
-
+      });
+    }
+  },  
+  components: {
+    PokemonCard
+  }
+};
 </script>
 <style>
-
-
-.ul{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 20px;
-    align-items: center;
-}
-
-
-
 </style>

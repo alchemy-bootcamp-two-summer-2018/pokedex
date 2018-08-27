@@ -1,36 +1,27 @@
 <template>
-
     <li class="pokemon-card">
-        <h2> {{pokemonList.pokemon}} </h2>
-        <img class="pokemon-img" :src=pokemonList.url_image>
-        
-        <p> <span class="type">Type: {{pokemonList.type_1}}</span> <span class="species"> Species: {{pokemonList.species_id}}</span></p>
-  
-    </li>
-    
+        <h2> {{pokemon.pokemon}} </h2>
+        <img class="pokemon-img" :src=pokemon.url_image>
+        <p> <span class="type">Type: {{pokemon.type_1}}</span> <span class="species"> Species: {{pokemon.species_id}}</span></p>
+    </li>   
 </template>
 
 <script>
-
 export default {
-
-props: {
-   pokemonList: Object
-}
-
-}
+  props: {
+    pokemon: Object
+  }
+};
 </script>
 
 <style scoped>
-
 .pokemon-card {
-list-style:none;
-border: solid 20px #f7f0e8;
-border-radius: 20px;
-
-padding: 5px;
-background: white; 
-text-align: center;
+    list-style:none;
+    border: solid 20px #f7f0e8;
+    border-radius: 20px;
+    padding: 5px;
+    background: white; 
+    text-align: center;
 
 }
 
@@ -39,15 +30,14 @@ text-align: center;
 }
 
 h2 {
-    
-    padding-bottom: 10px;
-    
+    padding-bottom: 10px;   
 }
 
 p {
     font-size: 12px;
     font-weight: bold;
 }
+
 .type {
     padding: 8px;
     background: #d64444;
@@ -56,6 +46,7 @@ p {
     margin-right: 8px;
     margin-bottom: 15px;
 }
+
 .species {
     padding: 8px;
     background: #8a6390;
@@ -63,8 +54,8 @@ p {
     border-radius: 20px;
     margin-bottom: 15px;
 }
+
 .pokemon-img {
     max-width: 190px;
 }
-
 </style>

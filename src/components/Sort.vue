@@ -1,64 +1,46 @@
 <template>
-<form v-on:submit.prevent="handleSubmit">
-    <select v-model="sort">
-        <option value="pokemon">Name</option>
-        <option value="Type_1">Type</option>
+<div class="filter-sort">
+    <select v-model="sort" v-on:change="handleChange">
+        <option value="pokemon">Sort By Name</option>
+        <option value="Type_1">Sort By `Type</option>
         <option value="species_id">Species</option>
     </select>
      <label>
-      <input type="radio" value="1" name="direction" v-model="direction"> asc
+      <input type="radio" value="1"
+       name="direction" v-model="direction"
+       v-on:change="handleChange"> asc
     </label>
     <label>
-      <input type="radio" value="-1" name="direction" v-model="direction"> desc
+      <input type="radio" value="-1" 
+      name="direction" v-model="direction"
+      v-on:change="handleChange"> desc
     </label>
-    <button>Apply Sort</button>
-</form>
+
+</div>
 </template>
 
 <script>
 export default {
-    props: {
-        onSort:Function
-    },
-
-    data() {
-        return {
-        sort: 'pokemon',
-        direction: 1
-        };
-    },
-
-    methods: {
-
-        handleSubmit() {
-            this.onSort({
-                sort: this.sort,
-                direction: this.direction
-            });
-        }
+  props: {
+    onSort: Function
+  },
+  data() {
+    return {
+      sort: 'pokemon',
+      direction: 1
+    };
+  },
+  methods: {
+    handleChange() {
+      this.onSort({
+        sort: this.sort, 
+        direction: this.direction
+      });
     }
-}
+  }
+};
 </script>
 
 <style>
 
-select {
-    width: 200px;
-    height: 50px;
-    font-size: 14px;
-    margin-right: 20px;
-}
-label {
-    color: white;
-    margin-right: 20px;
-}
-button {
-    width: 200px;
-    background: #d64444;
-    border: none;
-    color: white;
-    font-size: 20px;
-    padding: 20px;
-    font-weight: bold;
-}
 </style>
