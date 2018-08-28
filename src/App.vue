@@ -15,6 +15,7 @@
 import Characters from './components/Characters.vue';
 import CharacterFilter from './components/CharacterFilter.vue';
 import CharacterSort from './components/CharacterSort.vue';
+
 export default {
   name: 'app',
   data() {

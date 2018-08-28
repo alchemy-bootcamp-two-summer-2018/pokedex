@@ -2,15 +2,23 @@
   <form v-on:submit.prevent="handleSubmit">
     <p>
       <label>
-        size:
-        <select v-model="selected">
-          <option value="">All categories</option>
-          <option v-for="category in categories"
-            v-bind:key="category"
-            v-bind:value="category">
-            {{ category }}
+        type:
+        <select v-model="selected" v-on:change="handleChange">
+          <option value="">All Types</option>
+          <option v-for="type in types"
+            v-bind:key="type"
+            v-bind:value="type">
+            {{ type }}
           </option>
         </select>
+      </label>
+      <label>
+        attack: 
+        <input v-model.number="attack" type="number" v-on:keyup="handleChange">
+      </label>
+       <label>
+        defense: 
+        <input v-model.number="defense" type="number" v-on:keyup="handleChange">
       </label>
     </p>
     <p>
@@ -20,21 +28,24 @@
 </template>
 
 <script>
-import categoriesApi from '../../pokedex.js';
+import pokedex from '../../pokedex.js';
+
 export default {
   props: {
     onFilter: Function
   },
   data() {
     return {
-      categories: charactersApi.getCategories(),
-      selected: ''
+      attack: pokedex.getAttack(),
+      selected: '',
+      attack: ''
     };
   },
   methods: {
     handleSubmit() {
       const filter = {
-        category: this.selected
+        category: this.selected,
+        attack: this.attack
       };
       this.onFilter(filter);
     }

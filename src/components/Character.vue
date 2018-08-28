@@ -9,11 +9,49 @@
 </template>
 
 <script>
+import pokedex from '../../pokedex.js';
+import Character from './Character.vue';
+
 export default {
   props: {
-    character: Object
+    filter: Object,
+    sort: Object
+  },
+  data() {
+    return {
+      characters: pokedex.getCharacters()
+    };
+  },
+  computed: {
+    filteredCharacters() {
+      const { attack, defense } = this.filter;
+      if(!attack && (defense || 0) <= 0) return this.characters;
+
+      return this.characters.filter(character => {
+        return (
+          (!attack || character.attack === attack) &&
+          (!defense || character.defense > defense)
+        );
+      });
+    },
+  sortedCharacters() {
+    let { sort, direction } = this.sort;
+    if(!sort) {
+      sort = 'name';
+    };
+  
+    return this.filteredCharacters.slice().sort((a, b) => {
+      if(a[sort] > b[sort]) return 1 * direction;
+      if(b[sort] > a[sort]) return -1 * direction;
+      if(b[sort] === a[sort]) return 0;
+      });
+    }
+  },
+  components: {
+    Character
   }
 };
+
 </script>
 
 <style scoped>

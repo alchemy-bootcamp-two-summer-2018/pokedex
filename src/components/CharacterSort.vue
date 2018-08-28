@@ -2,14 +2,17 @@
   <form v-on:submit.prevent="handleSubmit">
     <select v-model="sort">
       <option value="name">Name</option>
-      <option value="category">Category</option>
       <option value="type">Type</option>
+      <option value="attack">Attack</option>
+      <option value="defence">Defense</option>
     </select>
     <label>
-      <input type="radio" value="1" name="direction" v-model="direction"> asc
+      <input type="radio" value="1" name="direction" v-model="direction"
+      v-on:change="handleChange"> asc
     </label>
     <label>
-      <input type="radio" value="-1" name="direction" v-model="direction"> desc
+      <input type="radio" value="-1" name="direction" v-model="direction"
+      v-on:change="handleChange"> desc
     </label>
     <button>Apply Sort</button>
   </form>

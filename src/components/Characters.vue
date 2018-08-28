@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import charactersApi from '../../pokedex.js';
+import characters from '../../pokedex.js';
 import Character from './Character.vue';
 export default {
   props: {
@@ -17,25 +17,25 @@ export default {
   },
   data() {
     return {
-      characters: charactersApi.getCharacters()
+      characters: characters.getCharacters()
     };
   },
   computed: {
     filteredCharacters() {
-      const { category } = this.filter;
-      if(!category) return this.characters;
+      const { type } = this.filter;
+      if(!type) return this.characters;
       return this.characters.filter(character => {
-        return character.category === category;
+        return character.type === type;
       });
     },
     sortedCharacters() {
-      let { sort, direction } = this.sort;
+      let { sort, name } = this.sort;
       if(!sort) {
         sort = 'name';
       }
       return this.filteredCharacters.slice().sort((a, b) => {
-        if(a[sort] > b[sort]) return 1 * direction;
-        if(b[sort] > a[sort]) return -1 * direction;
+        if(a[sort] > b[sort]) return 1 * name;
+        if(b[sort] > a[sort]) return -1 * name;
         if(b[sort] === a[sort]) return 0;
       });
     }
