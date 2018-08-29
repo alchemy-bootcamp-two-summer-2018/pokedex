@@ -25634,7 +25634,7 @@ let characters = [
 ];
 
 const allNames = characters.map(character => {
-  return character.type;
+  return character.type_1;
 });
 
 const seen = {};

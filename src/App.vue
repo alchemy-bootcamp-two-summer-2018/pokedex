@@ -21,7 +21,7 @@ export default {
   data() {
     return {
       filter: {
-        name: ''
+        type: ''
       },
       sort: {
         sort: 'name',
