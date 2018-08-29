@@ -1,8 +1,8 @@
 <template>
   <form v-on:submit.prevent="handleSubmit">
     <select v-model="sort">
-      <option value="name">Name</option>
-      <option value="type">Type</option>
+      <option value="pokemon">Name</option>
+      <option value="type_1">Type</option>
       <option value="attack">Attack</option>
       <option value="defence">Defense</option>
     </select>
@@ -25,7 +25,7 @@ export default {
   },
   data() {
     return {
-      sort: 'name',
+      sort: 'pokemon',
       direction: 1
     };
   },
