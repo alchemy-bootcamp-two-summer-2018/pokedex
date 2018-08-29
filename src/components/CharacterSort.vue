@@ -8,11 +8,11 @@
     </select>
     <label>
       <input type="radio" value="1" name="direction" v-model="direction"
-      v-on:change="handleChange"> asc
+      v-on:change="handleSubmit"> asc
     </label>
     <label>
       <input type="radio" value="-1" name="direction" v-model="direction"
-      v-on:change="handleChange"> desc
+      v-on:change="handleSubmit"> desc
     </label>
     <button>Apply Sort</button>
   </form>

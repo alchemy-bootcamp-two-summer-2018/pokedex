@@ -16,10 +16,10 @@
         attack: 
         <input v-model.number="attack" type="number" v-on:keyup="handleChange">
       </label>
-       <label>
+       <!-- <label>
         defense: 
         <input v-model.number="defense" type="number" v-on:keyup="handleChange">
-      </label>
+      </label> -->
     </p>
     <p>
       <button>Apply</button>
@@ -36,15 +36,15 @@ export default {
   },
   data() {
     return {
-      attack: pokedex.getAttack(),
+      types: pokedex.getTypes(),
       selected: '',
       attack: ''
     };
   },
   methods: {
-    handleSubmit() {
+    handleChange() {
       const filter = {
-        category: this.selected,
+        type: this.selected,
         attack: this.attack
       };
       this.onFilter(filter);

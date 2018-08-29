@@ -2,7 +2,7 @@
 <template>
   <ul>
     <Character v-for="character in sortedCharacters"
-      v-bind:key="character.name"
+      v-bind:key="character.character"
       v-bind:character="character"/>
   </ul>
 </template>
@@ -13,7 +13,8 @@ import Character from './Character.vue';
 export default {
   props: {
     filter: Object,
-    sort: Object
+    sort: Object,
+
   },
   data() {
     return {
