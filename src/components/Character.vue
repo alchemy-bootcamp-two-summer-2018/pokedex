@@ -35,16 +35,16 @@ export default {
         );
       });
     },
-  sortedCharacters() {
-    let { sort, direction } = this.sort;
-    if(!sort) {
-      sort = 'name';
-    };
+    sortedCharacters() {
+      let { sort, direction } = this.sort;
+      if(!sort) {
+        sort = 'name';
+      }
   
-    return this.filteredCharacters.slice().sort((a, b) => {
-      if(a[sort] > b[sort]) return 1 * direction;
-      if(b[sort] > a[sort]) return -1 * direction;
-      if(b[sort] === a[sort]) return 0;
+      return this.filteredCharacters.slice().sort((a, b) => {
+        if(a[sort] > b[sort]) return 1 * direction;
+        if(b[sort] > a[sort]) return -1 * direction;
+        if(b[sort] === a[sort]) return 0;
       });
     }
   },

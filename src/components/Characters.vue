@@ -26,17 +26,17 @@ export default {
       const { type } = this.filter;
       if(!type) return this.characters;
       return this.characters.filter(character => {
-        return character.type === type;
+        return character.type_1 === type;
       });
     },
     sortedCharacters() {
-      let { sort, name } = this.sort;
+      let { sort, direction } = this.sort;
       if(!sort) {
         sort = 'name';
       }
       return this.filteredCharacters.slice().sort((a, b) => {
-        if(a[sort] > b[sort]) return 1 * name;
-        if(b[sort] > a[sort]) return -1 * name;
+        if(a[sort] > b[sort]) return 1 * direction;
+        if(b[sort] > a[sort]) return -1 * direction;
         if(b[sort] === a[sort]) return 0;
       });
     }
