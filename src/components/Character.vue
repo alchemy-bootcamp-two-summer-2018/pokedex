@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import pokedex from '../../pokedex.js';
 import Character from './Character.vue';
 
 export default {
